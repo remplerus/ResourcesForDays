@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+issueTrackerURL="https://github.com/rempler/ResourcesForDays/issues/"
+license="LGPL 2.1"
+[[mods]]
+modId="rfd"
+version="${file.jarVersion}"
+displayName="ResourcesForDays"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/resourcesfordays"
+authors="rempler"
+description='''
+The Ultimate Resource Generator Mod.
+If Ex Nihilo installed, includes Dust, Crushed Endstone and Crushed Netherrack Generator.
+'''
+[[dependencies.rfd]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rfd]]
+    modId="exnihilosequentia"
+    mandatory=false
+    versionRange="[1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rfd]]
+    modId="cobblefordays"
+    mandatory=false
+    versionRange="[1.5.1,)"
+    ordering="NONE"
+    side="BOTH"

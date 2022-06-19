@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "rfd:dirt_gen_tier_2"
+    ]
+  },
+  "criteria": {
+    "has_dirt_gen_tier_1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rfd:dirt_gen_tier_1"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "rfd:dirt_gen_tier_2"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dirt_gen_tier_1",
+      "has_the_recipe"
+    ]
+  ]
+}

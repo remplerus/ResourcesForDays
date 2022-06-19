@@ -1,0 +1,6 @@
+{
+  "parent": "rfd:block/generator",
+  "textures": {
+    "material": "minecraft:block/acacia_log"
+  }
+}

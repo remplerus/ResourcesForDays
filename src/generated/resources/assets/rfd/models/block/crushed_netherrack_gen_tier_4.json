@@ -1,0 +1,9 @@
+{
+  "parent": "rfd:block/tier_4",
+  "textures": {
+    "texture_side": "exnihilosequentia:block/crushed_netherrack",
+    "texture_up": "exnihilosequentia:block/crushed_netherrack",
+    "water": "rfd:block/lava_still",
+    "lava": "rfd:block/lava_still"
+  }
+}

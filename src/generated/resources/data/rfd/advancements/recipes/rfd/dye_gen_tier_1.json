@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "rfd:dye_gen_tier_1"
+    ]
+  },
+  "criteria": {
+    "has_dyes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:air"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "rfd:dye_gen_tier_1"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dyes",
+      "has_the_recipe"
+    ]
+  ]
+}

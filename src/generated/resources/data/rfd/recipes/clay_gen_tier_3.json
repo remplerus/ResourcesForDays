@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "b": {
+      "item": "minecraft:water_bucket"
+    },
+    "l": {
+      "item": "minecraft:water_bucket"
+    },
+    "w": {
+      "tag": "forge:storage_blocks/iron"
+    },
+    "x": {
+      "item": "rfd:clay_gen_tier_2"
+    }
+  },
+  "result": {
+    "item": "rfd:clay_gen_tier_3"
+  }
+}
