@@ -16,6 +16,8 @@ public class RfDDataGen {
         if (event.includeServer()){
             generator.addProvider(new RfDLootTableGen(generator));
             generator.addProvider(new RfDRecipesGen(generator));
+            generator.addProvider(new RfDBlockTagGen(generator, event.getExistingFileHelper()));
+            generator.addProvider(new RfDItemTagGen(generator, event.getExistingFileHelper()));
         }
         if (event.includeClient()){
             generator.addProvider(new RfDBlockStateGen(generator, event.getExistingFileHelper()));

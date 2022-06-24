@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "rfd:clay_gen_tier_1",
+    "rfd:clean_gen_tier_1",
+    "rfd:dirt_gen_tier_1",
+    "rfd:end_gen_tier_1",
+    "rfd:fungus_gen_tier_1",
+    "rfd:glowstone_gen_tier_1",
+    "rfd:grass_gen_tier_1",
+    "rfd:gravel_gen_tier_1",
+    "rfd:ice_gen_tier_1",
+    "rfd:netherrack_gen_tier_1",
+    "rfd:obsidian_gen_tier_1",
+    "rfd:quartz_gen_tier_1",
+    "rfd:redstone_gen_tier_1",
+    "rfd:sand_gen_tier_1",
+    "rfd:snow_gen_tier_1",
+    "rfd:soulsand_gen_tier_1",
+    "rfd:dye_gen_tier_1",
+    "rfd:ore_gen_tier_1",
+    "rfd:dust_gen_tier_1",
+    "rfd:crushed_endstone_gen_tier_1",
+    "rfd:crushed_netherrack_gen_tier_1"
+  ]
+}

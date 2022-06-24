@@ -314,6 +314,8 @@ f3460ee5819479256dc5b2d8911c1ebfe036f678 assets/rfd/models/item/snow_gen_tier_3.
 4ebb07df1aa68f789b380c1c9390845dc8854760 assets/rfd/models/item/soulsand_gen_tier_3.json
 f1910c21a9e096b45009f76b993070a1850ed186 assets/rfd/models/item/soulsand_gen_tier_4.json
 bdaa7209368ffbb48accdec60ae8297906d3501f assets/rfd/models/item/soulsand_gen_tier_5.json
+25cfd98ed3c3bbbfc1fcf0800396f45b1b74c328 data/minecraft/tags/blocks/mineable/axe.json
+cfd4554cbc6dcb1b01590e825c84f41716837dea data/minecraft/tags/blocks/mineable/pickaxe.json
 f7295629cef00a60b5ec599f84b607bec402e0e9 data/rfd/advancements/recipes/rfd/clay_gen_tier_1.json
 baa03f5f232066bfd34d1713ef022cc5e3ba3567 data/rfd/advancements/recipes/rfd/clay_gen_tier_2.json
 81a9941972fdee76a8afe6c23d267d44465b2b63 data/rfd/advancements/recipes/rfd/clay_gen_tier_3.json
@@ -599,3 +601,7 @@ b9b94936161986b946b7b785c62f0ceceb3077f0 data/rfd/recipes/snow_gen_tier_5.json
 7aade6586683b2f7da8d1e7827c53eb596559da6 data/rfd/recipes/soulsand_gen_tier_3.json
 e7d8c0a03888349047973579bbd8fac095cbe029 data/rfd/recipes/soulsand_gen_tier_4.json
 74604df5daaaeafba586947c93d67b7e751b9421 data/rfd/recipes/soulsand_gen_tier_5.json
+d80ba8bd02d080aa2441bd6938d582a244b378ed data/rfd/tags/blocks/generators.json
+e58f148424e1a357d10aaafe73756945b1406160 data/rfd/tags/blocks/wooden_generators.json
+d80ba8bd02d080aa2441bd6938d582a244b378ed data/rfd/tags/items/generators.json
+e58f148424e1a357d10aaafe73756945b1406160 data/rfd/tags/items/wooden_generators.json

@@ -17,10 +17,7 @@ public class Config {
     public static final String CATEGORY_OREGEN = "oregenerator";
 
     private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
-    private static final ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
-
     public static ForgeConfigSpec COMMON_CONFIG;
-    public static ForgeConfigSpec CLIENT_CONFIG;
 
     public static ForgeConfigSpec.BooleanValue GENERATE_DUST;
     public static ForgeConfigSpec.BooleanValue ENABLE_ORE_GENERATOR;
@@ -56,7 +53,6 @@ public class Config {
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
-        CLIENT_CONFIG = CLIENT_BUILDER.build();
     }
 
     public static class Tiers {

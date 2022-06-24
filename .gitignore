@@ -24,3 +24,4 @@ run
 runserver
 build.bat
 setup*.bat
+/src/main/resources/assets/exnihilosequentia/textures/block/*
