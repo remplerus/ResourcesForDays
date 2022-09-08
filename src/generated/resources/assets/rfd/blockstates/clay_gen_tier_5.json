@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/clay_gen_tier_5"
+      "model": "rfd:block/block.rfd.clay_gen_tier_5"
     }
   }
 }

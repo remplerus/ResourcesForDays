@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.18.2-1.0'
+version = '1.19-1.0'
 group = 'com.rempler.rfd' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ResourcesForDays'
 
@@ -20,7 +20,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Need this here so
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.2'
+    mappings channel: 'official', version: '1.19.1'
     runs {
         client {
             workingDirectory project.file('run')
@@ -94,12 +94,12 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.51'
+    minecraft 'net.minecraftforge:forge:1.19.1-42.0.1'
     
-    implementation fg.deobf("curse.maven:cfd-349460:3739573")
-    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20220530-183458")
+    //implementation fg.deobf("curse.maven:cfd-349460:3739573")
+    //implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20220530-183458")
 
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:+")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.19.1-forge:+")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

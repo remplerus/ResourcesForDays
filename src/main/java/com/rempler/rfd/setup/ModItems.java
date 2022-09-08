@@ -110,21 +110,21 @@ public class ModItems {
     public static final RegistryObject<Item> ORE_ITEM_T4 = ITEMS.register("ore_gen_tier_4", () -> new BlockItem(ModBlocks.ORE_GEN_T4.get(), itemProperties));
     public static final RegistryObject<Item> ORE_ITEM_T5 = ITEMS.register("ore_gen_tier_5", () -> new BlockItem(ModBlocks.ORE_GEN_T5.get(), itemProperties));
 
-    public static final RegistryObject<Item> DUST_ITEM_T1 = ITEMS.register("dust_gen_tier_1", () -> new BlockItem(ModBlocks.DUST_GEN_T1.get(), itemProperties));
-    public static final RegistryObject<Item> DUST_ITEM_T2 = ITEMS.register("dust_gen_tier_2", () -> new BlockItem(ModBlocks.DUST_GEN_T2.get(), itemProperties));
-    public static final RegistryObject<Item> DUST_ITEM_T3 = ITEMS.register("dust_gen_tier_3", () -> new BlockItem(ModBlocks.DUST_GEN_T3.get(), itemProperties));
-    public static final RegistryObject<Item> DUST_ITEM_T4 = ITEMS.register("dust_gen_tier_4", () -> new BlockItem(ModBlocks.DUST_GEN_T4.get(), itemProperties));
-    public static final RegistryObject<Item> DUST_ITEM_T5 = ITEMS.register("dust_gen_tier_5", () -> new BlockItem(ModBlocks.DUST_GEN_T5.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T1 = ITEMS.register("crushed_endstone_gen_tier_1", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T2 = ITEMS.register("crushed_endstone_gen_tier_2", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T3 = ITEMS.register("crushed_endstone_gen_tier_3", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T4 = ITEMS.register("crushed_endstone_gen_tier_4", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T5 = ITEMS.register("crushed_endstone_gen_tier_5", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T1 = ITEMS.register("crushed_netherrack_gen_tier_1", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T2 = ITEMS.register("crushed_netherrack_gen_tier_2", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T3 = ITEMS.register("crushed_netherrack_gen_tier_3", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T4 = ITEMS.register("crushed_netherrack_gen_tier_4", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get(), itemProperties));
-    public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T5 = ITEMS.register("crushed_netherrack_gen_tier_5", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get(), itemProperties));
+    //public static final RegistryObject<Item> DUST_ITEM_T1 = ITEMS.register("dust_gen_tier_1", () -> new BlockItem(ModBlocks.DUST_GEN_T1.get(), itemProperties));
+    //public static final RegistryObject<Item> DUST_ITEM_T2 = ITEMS.register("dust_gen_tier_2", () -> new BlockItem(ModBlocks.DUST_GEN_T2.get(), itemProperties));
+    //public static final RegistryObject<Item> DUST_ITEM_T3 = ITEMS.register("dust_gen_tier_3", () -> new BlockItem(ModBlocks.DUST_GEN_T3.get(), itemProperties));
+    //public static final RegistryObject<Item> DUST_ITEM_T4 = ITEMS.register("dust_gen_tier_4", () -> new BlockItem(ModBlocks.DUST_GEN_T4.get(), itemProperties));
+    //public static final RegistryObject<Item> DUST_ITEM_T5 = ITEMS.register("dust_gen_tier_5", () -> new BlockItem(ModBlocks.DUST_GEN_T5.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T1 = ITEMS.register("crushed_endstone_gen_tier_1", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T2 = ITEMS.register("crushed_endstone_gen_tier_2", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T3 = ITEMS.register("crushed_endstone_gen_tier_3", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T4 = ITEMS.register("crushed_endstone_gen_tier_4", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_ENDSTONE_ITEM_T5 = ITEMS.register("crushed_endstone_gen_tier_5", () -> new BlockItem(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T1 = ITEMS.register("crushed_netherrack_gen_tier_1", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T2 = ITEMS.register("crushed_netherrack_gen_tier_2", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T3 = ITEMS.register("crushed_netherrack_gen_tier_3", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T4 = ITEMS.register("crushed_netherrack_gen_tier_4", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get(), itemProperties));
+    //public static final RegistryObject<Item> CRUSHED_NETHERRACK_ITEM_T5 = ITEMS.register("crushed_netherrack_gen_tier_5", () -> new BlockItem(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get(), itemProperties));
 
 
     public static void init(IEventBus modBusEvent) {

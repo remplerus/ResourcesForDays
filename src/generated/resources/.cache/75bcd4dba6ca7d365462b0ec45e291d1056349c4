@@ -1,0 +1,5 @@
+// 1.19.1	2022-07-31T00:24:38.2385099	Tags for minecraft:block
+88cd18698aff6814a165c887caa46069e61bb60c data/minecraft/tags/blocks/mineable/axe.json
+6c1bbdbcdc242fbe9fa9f9a337c1439bddcd5bef data/minecraft/tags/blocks/mineable/pickaxe.json
+f7d0333208ec8d57e1146a37a49b99515ee03530 data/rfd/tags/blocks/generators.json
+8bfba40566496acb99565d9aa422cc295099e7c9 data/rfd/tags/blocks/wooden_generators.json

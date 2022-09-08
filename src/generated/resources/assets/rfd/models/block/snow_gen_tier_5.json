@@ -1,9 +1,0 @@
-{
-  "parent": "rfd:block/tier_5",
-  "textures": {
-    "texture_side": "minecraft:block/snow",
-    "texture_up": "minecraft:block/snow",
-    "water": "rfd:block/water_still",
-    "lava": "rfd:block/water_still"
-  }
-}

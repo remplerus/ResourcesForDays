@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "rfd:clay_gen_tier_1",
     "rfd:clean_gen_tier_1",
@@ -18,9 +17,6 @@
     "rfd:snow_gen_tier_1",
     "rfd:soulsand_gen_tier_1",
     "rfd:dye_gen_tier_1",
-    "rfd:ore_gen_tier_1",
-    "rfd:dust_gen_tier_1",
-    "rfd:crushed_endstone_gen_tier_1",
-    "rfd:crushed_netherrack_gen_tier_1"
+    "rfd:ore_gen_tier_1"
   ]
 }

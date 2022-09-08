@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/netherrack_gen_tier_2"
+      "model": "rfd:block/block.rfd.netherrack_gen_tier_2"
     }
   }
 }

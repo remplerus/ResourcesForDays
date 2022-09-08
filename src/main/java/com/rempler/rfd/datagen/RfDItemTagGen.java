@@ -16,7 +16,7 @@ public class RfDItemTagGen extends ItemTagsProvider {
     protected void addTags() {
         for (int i = 0; i < ModItems.ITEMS.getEntries().size(); i++) {
             Item item = ModItems.ITEMS.getEntries().stream().toList().get(i).get();
-            if (item.getRegistryName().getPath().contains("tier_1")) {
+            if (item.toString().contains("tier_1")) {
                 tag(ResourcesForDays.GEN_BLOCKS_ITEM_WOODEN).add(item);
             } else {
                 tag(ResourcesForDays.GEN_BLOCKS_ITEM).add(item);

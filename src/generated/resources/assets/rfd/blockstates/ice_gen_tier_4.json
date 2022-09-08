@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/ice_gen_tier_4"
+      "model": "rfd:block/block.rfd.ice_gen_tier_4"
     }
   }
 }

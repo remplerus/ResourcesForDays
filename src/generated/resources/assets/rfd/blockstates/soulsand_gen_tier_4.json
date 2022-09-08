@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/soulsand_gen_tier_4"
+      "model": "rfd:block/block.rfd.soulsand_gen_tier_4"
     }
   }
 }

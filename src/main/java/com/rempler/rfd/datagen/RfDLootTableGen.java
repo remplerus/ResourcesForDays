@@ -137,21 +137,21 @@ public class RfDLootTableGen extends LootTableProvider {
             this.dropSelf(ModBlocks.SOULSAND_GEN_T4.get());
             this.dropSelf(ModBlocks.SOULSAND_GEN_T5.get());
             if (ModList.get().isLoaded("exnihilosequentia")) {
-                this.dropSelf(ModBlocks.DUST_GEN_T1.get());
-                this.dropSelf(ModBlocks.DUST_GEN_T2.get());
-                this.dropSelf(ModBlocks.DUST_GEN_T3.get());
-                this.dropSelf(ModBlocks.DUST_GEN_T4.get());
-                this.dropSelf(ModBlocks.DUST_GEN_T5.get());
-                this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get());
-                this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get());
-                this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get());
-                this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get());
-                this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get());
-                this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get());
-                this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get());
-                this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get());
-                this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get());
-                this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get());
+                //this.dropSelf(ModBlocks.DUST_GEN_T1.get());
+                //this.dropSelf(ModBlocks.DUST_GEN_T2.get());
+                //this.dropSelf(ModBlocks.DUST_GEN_T3.get());
+                //this.dropSelf(ModBlocks.DUST_GEN_T4.get());
+                //this.dropSelf(ModBlocks.DUST_GEN_T5.get());
+                //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get());
+                //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get());
+                //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get());
+                //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get());
+                //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get());
+                //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get());
+                //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get());
+                //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get());
+                //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get());
+                //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get());
             }
         }
 

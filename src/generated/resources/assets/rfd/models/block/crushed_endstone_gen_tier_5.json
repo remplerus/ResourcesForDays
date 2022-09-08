@@ -1,9 +1,0 @@
-{
-  "parent": "rfd:block/tier_5",
-  "textures": {
-    "texture_side": "exnihilosequentia:block/crushed_end_stone",
-    "texture_up": "exnihilosequentia:block/crushed_end_stone",
-    "water": "rfd:block/lava_still",
-    "lava": "rfd:block/water_still"
-  }
-}

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/dye_gen_tier_1"
+      "model": "rfd:block/block.rfd.dye_gen_tier_1"
     }
   }
 }

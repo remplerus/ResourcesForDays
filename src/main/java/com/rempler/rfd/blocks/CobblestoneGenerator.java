@@ -14,8 +14,6 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -36,7 +34,7 @@ public class CobblestoneGenerator extends BaseGenerator {
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flags) {
 
         if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            TranslatableComponent information = new TranslatableComponent("block.generator.information");
+            Component information = Component.translatable("block.generator.information");
 
             String text = information.getString();
 
@@ -51,9 +49,9 @@ public class CobblestoneGenerator extends BaseGenerator {
             }
             text = text.replace("{ticks}", ticks);
 
-            tooltip.add(new TextComponent(text));
+            tooltip.add(Component.literal(text));
         } else {
-            tooltip.add(new TranslatableComponent("block.holdshift.information"));
+            tooltip.add(Component.translatable("block.holdshift.information"));
         }
     }
 

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/dirt_gen_tier_5"
+      "model": "rfd:block/block.rfd.dirt_gen_tier_5"
     }
   }
 }

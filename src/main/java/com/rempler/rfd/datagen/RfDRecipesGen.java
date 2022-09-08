@@ -97,8 +97,8 @@ public class RfDRecipesGen extends RecipeProvider {
                 .define('l', bucketLeft)
                 .define('w', tieredItem)
                 .define('x', input)
-                .unlockedBy("has_" + input.asItem().getRegistryName().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(consumer, modLoc(output.asItem().getRegistryName().getPath()));
+                .unlockedBy("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(consumer, modLoc(output.asItem().getName(input.asItem().getDefaultInstance()).getString()));
     }
 
     private void createTieredGenerator(Consumer<FinishedRecipe> consumer, TagKey<Item> input, ItemLike output, ItemLike bucketRight, ItemLike bucketLeft) {
@@ -113,13 +113,13 @@ public class RfDRecipesGen extends RecipeProvider {
                 .define('w', ItemTags.LOGS)
                 .define('x', input)
                 .unlockedBy("has_" + input.location().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.AIR))
-                .save(consumer, modLoc(output.asItem().getRegistryName().getPath()));
+                .save(consumer, modLoc(output.asItem().getName(output.asItem().getDefaultInstance()).getString()));
     }
 
     private void createSmithingGenerator(Consumer<FinishedRecipe> consumer, ItemLike input, ItemLike output) {
         UpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(Items.NETHERITE_BLOCK), output.asItem())
-                .unlocks("has_" + input.asItem().getRegistryName().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(consumer, modLoc(output.asItem().getRegistryName().getPath()));
+                .unlocks("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(consumer, modLoc(output.asItem().getName(output.asItem().getDefaultInstance()).getString()));
     }
 
     private ResourceLocation modLoc(String input) {

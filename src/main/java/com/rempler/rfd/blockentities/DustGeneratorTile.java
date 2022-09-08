@@ -29,26 +29,26 @@ public class DustGeneratorTile extends BaseGeneratorTile {
         tickServer(GENERATION_BLOCK);
     }
 
-    public static DustGeneratorTile create(int Tier, BlockPos pos, BlockState state) {
-        return switch(Tier) {
-            case 1 -> new DustGeneratorTile(Config.tier1, ModBE.DUST_T1_BE.get(), pos, state);
-            case 2 -> new DustGeneratorTile(Config.tier2, ModBE.DUST_T2_BE.get(), pos, state);
-            case 3 -> new DustGeneratorTile(Config.tier3, ModBE.DUST_T3_BE.get(), pos, state);
-            case 4 -> new DustGeneratorTile(Config.tier4, ModBE.DUST_T4_BE.get(), pos, state);
-            case 5 -> new DustGeneratorTile(Config.tier5, ModBE.DUST_T5_BE.get(), pos, state);
-            default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
-        };
-    }
-
-    public static BlockEntityType.BlockEntitySupplier<DustGeneratorTile> makeSupplier(int Tier) {
-        return switch(Tier) {
-            case 1 -> (pos, state) -> new DustGeneratorTile(Config.tier1, ModBE.DUST_T1_BE.get(), pos, state);
-            case 2 -> (pos, state) -> new DustGeneratorTile(Config.tier2, ModBE.DUST_T2_BE.get(), pos, state);
-            case 3 -> (pos, state) -> new DustGeneratorTile(Config.tier3, ModBE.DUST_T3_BE.get(), pos, state);
-            case 4 -> (pos, state) -> new DustGeneratorTile(Config.tier4, ModBE.DUST_T4_BE.get(), pos, state);
-            case 5 -> (pos, state) -> new DustGeneratorTile(Config.tier5, ModBE.DUST_T5_BE.get(), pos, state);
-            default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
-        };
-    }
+    //public static DustGeneratorTile create(int Tier, BlockPos pos, BlockState state) {
+    //    return switch(Tier) {
+    //        case 1 -> new DustGeneratorTile(Config.tier1, ModBE.DUST_T1_BE.get(), pos, state);
+    //        case 2 -> new DustGeneratorTile(Config.tier2, ModBE.DUST_T2_BE.get(), pos, state);
+    //        case 3 -> new DustGeneratorTile(Config.tier3, ModBE.DUST_T3_BE.get(), pos, state);
+    //        case 4 -> new DustGeneratorTile(Config.tier4, ModBE.DUST_T4_BE.get(), pos, state);
+    //        case 5 -> new DustGeneratorTile(Config.tier5, ModBE.DUST_T5_BE.get(), pos, state);
+    //        default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
+    //    };
+    //}
+//
+    //public static BlockEntityType.BlockEntitySupplier<DustGeneratorTile> makeSupplier(int Tier) {
+    //    return switch(Tier) {
+    //        case 1 -> (pos, state) -> new DustGeneratorTile(Config.tier1, ModBE.DUST_T1_BE.get(), pos, state);
+    //        case 2 -> (pos, state) -> new DustGeneratorTile(Config.tier2, ModBE.DUST_T2_BE.get(), pos, state);
+    //        case 3 -> (pos, state) -> new DustGeneratorTile(Config.tier3, ModBE.DUST_T3_BE.get(), pos, state);
+    //        case 4 -> (pos, state) -> new DustGeneratorTile(Config.tier4, ModBE.DUST_T4_BE.get(), pos, state);
+    //        case 5 -> (pos, state) -> new DustGeneratorTile(Config.tier5, ModBE.DUST_T5_BE.get(), pos, state);
+    //        default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
+    //    };
+    //}
 
 }

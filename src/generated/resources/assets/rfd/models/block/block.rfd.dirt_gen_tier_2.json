@@ -1,0 +1,9 @@
+{
+  "parent": "rfd:block/tier_2",
+  "textures": {
+    "lava": "rfd:block/water_still",
+    "texture_side": "minecraft:block/dirt",
+    "texture_up": "minecraft:block/dirt",
+    "water": "rfd:block/water_still"
+  }
+}

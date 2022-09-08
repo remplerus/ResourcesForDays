@@ -15,8 +15,6 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -36,7 +34,7 @@ public class ClayGenerator extends BaseGenerator {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flags) {
         if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
-            String text = new TranslatableComponent("block.generator.information").getString();
+            String text = Component.translatable("block.generator.information").getString();
 
             if (Boolean.TRUE.equals(Config.GENERATE_DUST.get())) {
                 text = text.replace("{item}", Items.CLAY_BALL.getDescription().getString());
@@ -53,9 +51,9 @@ public class ClayGenerator extends BaseGenerator {
             }
             text = text.replace("{ticks}", ticks);
 
-            tooltip.add(new TextComponent(text));
+            tooltip.add(Component.literal(text));
         } else {
-            tooltip.add(new TranslatableComponent("block.holdshift.information"));
+            tooltip.add(Component.translatable("block.holdshift.information"));
         }
     }
 

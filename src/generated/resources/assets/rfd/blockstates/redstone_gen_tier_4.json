@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/redstone_gen_tier_4"
+      "model": "rfd:block/block.rfd.redstone_gen_tier_4"
     }
   }
 }

@@ -1,9 +1,0 @@
-{
-  "parent": "rfd:block/tier_4",
-  "textures": {
-    "texture_side": "minecraft:block/netherrack",
-    "texture_up": "minecraft:block/netherrack",
-    "water": "rfd:block/lava_still",
-    "lava": "rfd:block/lava_still"
-  }
-}
