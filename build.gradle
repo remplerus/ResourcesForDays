@@ -86,19 +86,23 @@ repositories {
 
     maven {
         name 'cursemaven'
-        url 'https://cursemaven.com'
+        url 'https://cfa2.cursemaven.com'
         content {
             includeGroup 'curse.maven'
         }
     }
+
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.51'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.76'
     
     implementation fg.deobf("curse.maven:cfd-349460:3739573")
-    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20220530-183458")
-
+    //implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20220530-183458")
+    implementation fg.deobf("blank:ExNihiloSequentia:+")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:+")
 }
 
