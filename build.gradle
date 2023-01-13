@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.18.2-1.0'
+version = '1.18.2-1.2'
 group = 'com.rempler.rfd' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ResourcesForDays'
 
@@ -78,7 +78,7 @@ repositories {
 
     maven {
         name 'ex nihilo repo'
-        url 'https://repo.jacob-williams.me/repository/maven-releases/'
+        url 'https://repo.jacob-williams.me/repository/internal/'
         content {
             includeGroup 'novamachina.exnihilosequentia'
         }
@@ -101,8 +101,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.76'
     
     implementation fg.deobf("curse.maven:cfd-349460:3739573")
-    //implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20220530-183458")
-    implementation fg.deobf("blank:ExNihiloSequentia:+")
+    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.18.2-20230105-211236")
+    //implementation fg.deobf("blank:ExNihiloSequentia:+")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:+")
 }
 
