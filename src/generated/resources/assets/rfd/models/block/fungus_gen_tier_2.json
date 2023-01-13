@@ -1,0 +1,10 @@
+{
+  "parent": "rfd:block/tier_2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "lava": "rfd:block/water_still",
+    "texture_side": "minecraft:block/mycelium_side",
+    "texture_up": "minecraft:block/mycelium_top",
+    "water": "rfd:block/water_still"
+  }
+}

@@ -1,6 +1,5 @@
 package com.rempler.rfd;
 
-import com.rempler.rfd.setup.ClientSetup;
 import com.rempler.rfd.setup.Config;
 import com.rempler.rfd.setup.ModBE;
 import com.rempler.rfd.setup.ModBlocks;
@@ -19,7 +18,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -49,8 +47,6 @@ public class ResourcesForDays
         ModItems.init(EVENT_BUS);
         ModBlocks.init(EVENT_BUS);
         ModBE.init(EVENT_BUS);
-
-        EVENT_BUS.addListener(ClientSetup::setupClient);
 
         Config.loadConfig(Config.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("rfd-common.toml"));
     }

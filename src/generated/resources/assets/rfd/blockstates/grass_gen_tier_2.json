@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/block.rfd.grass_gen_tier_2"
+      "model": "rfd:block/grass_gen_tier_2"
     }
   }
 }

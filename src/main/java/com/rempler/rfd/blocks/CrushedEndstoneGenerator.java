@@ -25,7 +25,7 @@ import org.lwjgl.glfw.GLFW;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class CrushedEndstoneGenerator {/*extends BaseGenerator {
+public class CrushedEndstoneGenerator extends BaseGenerator {
     private final int tier;
     public CrushedEndstoneGenerator(int Tier){
         super(15); // set to 15 as this generator uses lava
@@ -82,5 +82,5 @@ public class CrushedEndstoneGenerator {/*extends BaseGenerator {
             };
         }
         return null;
-    }*/
+    }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/block.rfd.obsidian_gen_tier_2"
+      "model": "rfd:block/obsidian_gen_tier_2"
     }
   }
 }

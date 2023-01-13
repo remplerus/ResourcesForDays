@@ -25,30 +25,31 @@ public class CrushedEndstoneGeneratorTile extends BaseGeneratorTile {
         if (ForgeRegistries.BLOCKS.containsKey(key)) {
             Block block = ForgeRegistries.BLOCKS.getValue(key);
             tickServer(block);
+        } else {
+            tickServer(GENERATION_BLOCK);
         }
-        tickServer(GENERATION_BLOCK);
     }
 
-    //public static CrushedEndstoneGeneratorTile create(int Tier, BlockPos pos, BlockState state) {
-    //    return switch(Tier) {
-    //        case 1 -> new CrushedEndstoneGeneratorTile(Config.tier1, ModBE.CRUSHED_ENDSTONE_T1_BE.get(), pos, state);
-    //        case 2 -> new CrushedEndstoneGeneratorTile(Config.tier2, ModBE.CRUSHED_ENDSTONE_T2_BE.get(), pos, state);
-    //        case 3 -> new CrushedEndstoneGeneratorTile(Config.tier3, ModBE.CRUSHED_ENDSTONE_T3_BE.get(), pos, state);
-    //        case 4 -> new CrushedEndstoneGeneratorTile(Config.tier4, ModBE.CRUSHED_ENDSTONE_T4_BE.get(), pos, state);
-    //        case 5 -> new CrushedEndstoneGeneratorTile(Config.tier5, ModBE.CRUSHED_ENDSTONE_T5_BE.get(), pos, state);
-    //        default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
-    //    };
-    //}
-//
-    //public static BlockEntityType.BlockEntitySupplier<CrushedEndstoneGeneratorTile> makeSupplier(int Tier) {
-    //    return switch(Tier) {
-    //        case 1 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier1, ModBE.CRUSHED_ENDSTONE_T1_BE.get(), pos, state);
-    //        case 2 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier2, ModBE.CRUSHED_ENDSTONE_T2_BE.get(), pos, state);
-    //        case 3 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier3, ModBE.CRUSHED_ENDSTONE_T3_BE.get(), pos, state);
-    //        case 4 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier4, ModBE.CRUSHED_ENDSTONE_T4_BE.get(), pos, state);
-    //        case 5 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier5, ModBE.CRUSHED_ENDSTONE_T5_BE.get(), pos, state);
-    //        default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
-    //    };
-    //}
+    public static CrushedEndstoneGeneratorTile create(int Tier, BlockPos pos, BlockState state) {
+        return switch(Tier) {
+            case 1 -> new CrushedEndstoneGeneratorTile(Config.tier1, ModBE.CRUSHED_ENDSTONE_T1_BE.get(), pos, state);
+            case 2 -> new CrushedEndstoneGeneratorTile(Config.tier2, ModBE.CRUSHED_ENDSTONE_T2_BE.get(), pos, state);
+            case 3 -> new CrushedEndstoneGeneratorTile(Config.tier3, ModBE.CRUSHED_ENDSTONE_T3_BE.get(), pos, state);
+            case 4 -> new CrushedEndstoneGeneratorTile(Config.tier4, ModBE.CRUSHED_ENDSTONE_T4_BE.get(), pos, state);
+            case 5 -> new CrushedEndstoneGeneratorTile(Config.tier5, ModBE.CRUSHED_ENDSTONE_T5_BE.get(), pos, state);
+            default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
+        };
+    }
+
+    public static BlockEntityType.BlockEntitySupplier<CrushedEndstoneGeneratorTile> makeSupplier(int Tier) {
+        return switch(Tier) {
+            case 1 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier1, ModBE.CRUSHED_ENDSTONE_T1_BE.get(), pos, state);
+            case 2 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier2, ModBE.CRUSHED_ENDSTONE_T2_BE.get(), pos, state);
+            case 3 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier3, ModBE.CRUSHED_ENDSTONE_T3_BE.get(), pos, state);
+            case 4 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier4, ModBE.CRUSHED_ENDSTONE_T4_BE.get(), pos, state);
+            case 5 -> (pos, state) -> new CrushedEndstoneGeneratorTile(Config.tier5, ModBE.CRUSHED_ENDSTONE_T5_BE.get(), pos, state);
+            default -> throw new IllegalArgumentException("Unknown Tier: " + Tier);
+        };
+    }
 
 }

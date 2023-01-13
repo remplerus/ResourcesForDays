@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/block.rfd.quartz_gen_tier_5"
+      "model": "rfd:block/quartz_gen_tier_5"
     }
   }
 }

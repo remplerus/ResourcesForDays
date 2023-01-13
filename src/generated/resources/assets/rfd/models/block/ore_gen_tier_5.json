@@ -1,0 +1,10 @@
+{
+  "parent": "rfd:block/tier_5",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "lava": "rfd:block/water_still",
+    "texture_side": "minecraft:block/diamond_ore",
+    "texture_up": "minecraft:block/diamond_ore",
+    "water": "rfd:block/lava_still"
+  }
+}

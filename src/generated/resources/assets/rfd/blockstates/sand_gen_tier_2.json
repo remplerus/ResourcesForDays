@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/block.rfd.sand_gen_tier_2"
+      "model": "rfd:block/sand_gen_tier_2"
     }
   }
 }

@@ -1,9 +1,0 @@
-{
-  "parent": "rfd:block/tier_4",
-  "textures": {
-    "lava": "rfd:block/lava_still",
-    "texture_side": "minecraft:block/quartz_block_top",
-    "texture_up": "minecraft:block/quartz_block_top",
-    "water": "rfd:block/lava_still"
-  }
-}

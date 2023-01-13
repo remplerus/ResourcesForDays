@@ -11,8 +11,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -24,6 +25,7 @@ public abstract class BaseGeneratorTile extends BlockEntity {
     private final ConfigCache configCache;
     protected ItemStackHandler handler;
     private int ticksPerGenCycle;
+    private LazyOptional<IItemHandler> cache = null;
 
     protected BaseGeneratorTile(Config.Tiers tiers, BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
         super(tileEntityTypeIn, pos, state);
@@ -43,6 +45,36 @@ public abstract class BaseGeneratorTile extends BlockEntity {
         tickServer(new ItemStack(item), new ItemStack(item));
     }
 
+    private void updateCache() {
+        BlockEntity tileEntity = this.level != null && this.level.isLoaded(this.worldPosition.above()) ? this.level.getBlockEntity(this.worldPosition.above()) : null;
+        if (tileEntity != null) {
+            LazyOptional<IItemHandler> lazyOptional = tileEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, Direction.DOWN);
+            if (lazyOptional.isPresent()) {
+                if (this.cache != lazyOptional) {
+                    this.cache = lazyOptional;
+                    this.cache.addListener((l) -> this.updateCache());
+                }
+            } else {
+                this.cache = LazyOptional.empty();
+            }
+        } else {
+            this.cache = LazyOptional.empty();
+        }
+    }
+
+    private LazyOptional<IItemHandler> getCache() {
+        this.updateCache();
+
+        return this.cache;
+    }
+
+    private void push(ItemStack stack) {
+        ItemStack result = this.getCache().map((iItemHandler) -> ItemHandlerHelper.insertItemStacked(iItemHandler, stack, false)).orElse(stack);
+        if (result.isEmpty()) {
+            this.setChanged();
+        }
+    }
+
     public void tickServer(ItemStack item, ItemStack block) {
         if(tickCount % ticksPerGenCycle == 0) {
             ticksPerGenCycle = configCache.getInterval();
@@ -54,7 +86,11 @@ public abstract class BaseGeneratorTile extends BlockEntity {
                 stack = block;
             }
 
-            ItemHandlerHelper.insertItemStacked(getHandler(), stack, false);
+            if (this.getCache().isPresent()) {
+                push(stack);
+            } else {
+                ItemHandlerHelper.insertItemStacked(getHandler(), stack, false);
+            }
             tickCount = 1;
         }
         tickCount += 1;
@@ -77,7 +113,7 @@ public abstract class BaseGeneratorTile extends BlockEntity {
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
+        if (cap == ForgeCapabilities.ITEM_HANDLER){
             return LazyOptional.of(() -> (T) getHandler());
         }
         return super.getCapability(cap, side);

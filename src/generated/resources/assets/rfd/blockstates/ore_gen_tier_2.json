@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "rfd:block/block.rfd.ore_gen_tier_2"
+      "model": "rfd:block/ore_gen_tier_2"
     }
   }
 }

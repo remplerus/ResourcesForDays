@@ -17,6 +17,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import novamachina.exnihilosequentia.common.init.ExNihiloBlocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;

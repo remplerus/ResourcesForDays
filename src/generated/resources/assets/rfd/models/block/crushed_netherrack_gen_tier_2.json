@@ -1,0 +1,10 @@
+{
+  "parent": "rfd:block/tier_2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "lava": "rfd:block/water_still",
+    "texture_side": "exnihilosequentia:block/crushed_netherrack",
+    "texture_up": "exnihilosequentia:block/crushed_netherrack",
+    "water": "rfd:block/water_still"
+  }
+}

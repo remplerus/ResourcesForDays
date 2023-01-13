@@ -24,7 +24,7 @@ import org.lwjgl.glfw.GLFW;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class DustGenerator {/*extends BaseGenerator {
+public class DustGenerator extends BaseGenerator {
     private final int tier;
     public DustGenerator(int Tier){
         super(15); // set to 15 as this generator uses lava
@@ -80,5 +80,5 @@ public class DustGenerator {/*extends BaseGenerator {
             };
         }
         return null;
-    }*/
+    }
 }
