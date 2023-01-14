@@ -1,0 +1,5 @@
+// 1.19.3	2023-01-14T01:41:30.2395541	Tags for minecraft:block mod id rfd
+88cd18698aff6814a165c887caa46069e61bb60c data/minecraft/tags/blocks/mineable/axe.json
+6c1bbdbcdc242fbe9fa9f9a337c1439bddcd5bef data/minecraft/tags/blocks/mineable/pickaxe.json
+3f1b701c8625fc1e44b04b637ecabbe20ae36304 data/rfd/tags/blocks/generators.json
+77ca275d148012e0204da6f878e2f7636a48abf5 data/rfd/tags/blocks/wooden_generators.json

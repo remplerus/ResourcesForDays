@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:water_bucket"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:water_bucket"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "w": {
+      "tag": "forge:stone"
+    },
+    "x": {
+      "item": "rfd:ice_gen_tier_1"
+    }
+  },
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "result": {
+    "item": "rfd:ice_gen_tier_2"
+  }
+}

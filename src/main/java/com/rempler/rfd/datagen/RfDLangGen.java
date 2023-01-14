@@ -3,6 +3,7 @@ package com.rempler.rfd.datagen;
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RfDLangGen extends LanguageProvider {
-    public RfDLangGen(DataGenerator generator) {
+    public RfDLangGen(PackOutput generator) {
         super(generator, ResourcesForDays.MODID, "en_us");
     }
 

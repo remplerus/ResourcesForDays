@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_block.rfd.clay_gen_tier_3": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rfd:clay_gen_tier_3"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rfd:clay_gen_tier_4"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_block.rfd.clay_gen_tier_3",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rfd:clay_gen_tier_4"
+    ]
+  }
+}

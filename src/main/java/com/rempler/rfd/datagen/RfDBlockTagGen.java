@@ -2,19 +2,23 @@ package com.rempler.rfd.datagen;
 
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.CompletableFuture;
+
 public class RfDBlockTagGen extends BlockTagsProvider {
-    public RfDBlockTagGen(DataGenerator p_126511_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_126511_, ResourcesForDays.MODID, existingFileHelper);
+    public RfDBlockTagGen(PackOutput po, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(po, lookupProvider, ResourcesForDays.MODID, existingFileHelper);
     }
 
-    protected void addTags() {
+    @Override
+    protected void addTags(HolderLookup.Provider provider) {
         for (int i = 0; i < ModBlocks.BLOCKS.getEntries().size(); i++) {
             Block block = ModBlocks.BLOCKS.getEntries().stream().toList().get(i).get();
             if (block.getName().getString().contains("tier_1")) {

@@ -3,6 +3,7 @@ package com.rempler.rfd.datagen;
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -21,7 +22,7 @@ public class RfDBlockStateGen extends BlockStateProvider {
     private static final String tier3 = "tier_3";
     private static final String tier4 = "tier_4";
     private static final String tier5 = "tier_5";
-    public RfDBlockStateGen(DataGenerator generator, ExistingFileHelper fileHelper) {
+    public RfDBlockStateGen(PackOutput generator, ExistingFileHelper fileHelper) {
         super(generator, ResourcesForDays.MODID, fileHelper);
     }
 

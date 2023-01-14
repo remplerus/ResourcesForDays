@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     private ModItems(){}
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ResourcesForDays.MODID);
-    private static final Item.Properties itemProperties = new Item.Properties().tab(ResourcesForDays.itemGroup);
+    private static final Item.Properties itemProperties = new Item.Properties();
 
     //public static final RegistryObject<Item> COBBLE_ITEM_T1 = ITEMS.register("cobble_gen_tier_1", () -> new BlockItem(ModBlocks.COBBLE_GEN_T1.get(), itemProperties));
     //public static final RegistryObject<Item> COBBLE_ITEM_T2 = ITEMS.register("cobble_gen_tier_2", () -> new BlockItem(ModBlocks.COBBLE_GEN_T2.get(), itemProperties));

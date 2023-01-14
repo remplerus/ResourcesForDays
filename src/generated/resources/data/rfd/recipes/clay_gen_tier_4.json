@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:water_bucket"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:water_bucket"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "w": {
+      "tag": "forge:storage_blocks/diamond"
+    },
+    "x": {
+      "item": "rfd:clay_gen_tier_3"
+    }
+  },
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "result": {
+    "item": "rfd:clay_gen_tier_4"
+  }
+}

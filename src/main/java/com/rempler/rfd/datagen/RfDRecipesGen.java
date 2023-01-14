@@ -3,8 +3,9 @@ package com.rempler.rfd.datagen;
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
@@ -17,18 +18,18 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
-import novamachina.exnihilosequentia.common.init.ExNihiloBlocks;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
 public class RfDRecipesGen extends RecipeProvider {
-    public RfDRecipesGen(DataGenerator generator) {
+    public RfDRecipesGen(PackOutput generator) {
         super(generator);
     }
 
     @Override
-    protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         Item water = Items.WATER_BUCKET;
         Item lava = Items.LAVA_BUCKET;
         createGenerator(consumer, Items.CLAY_BALL, ModBlocks.CLAY_GEN_T1.get(), ModBlocks.CLAY_GEN_T2.get(),
@@ -88,7 +89,7 @@ public class RfDRecipesGen extends RecipeProvider {
     }
 
     private void createTieredGenerator(Consumer<FinishedRecipe> consumer, TagKey<Item> tieredItem, ItemLike input, ItemLike output, ItemLike bucketRight, ItemLike bucketLeft) {
-        ShapedRecipeBuilder.shaped(output)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
                 .pattern("sws")
                 .pattern("bgl")
                 .pattern("sxs")
@@ -99,11 +100,11 @@ public class RfDRecipesGen extends RecipeProvider {
                 .define('w', tieredItem)
                 .define('x', input)
                 .unlockedBy("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(consumer, modLoc(output.asItem().getName(input.asItem().getDefaultInstance()).getString()));
+                .save(consumer, modLoc(ForgeRegistries.ITEMS.getKey(output.asItem()).getPath()));
     }
 
     private void createTieredGenerator(Consumer<FinishedRecipe> consumer, TagKey<Item> input, ItemLike output, ItemLike bucketRight, ItemLike bucketLeft) {
-        ShapedRecipeBuilder.shaped(output)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output)
                 .pattern("sws")
                 .pattern("bgl")
                 .pattern("sxs")
@@ -114,13 +115,13 @@ public class RfDRecipesGen extends RecipeProvider {
                 .define('w', ItemTags.LOGS)
                 .define('x', input)
                 .unlockedBy("has_" + input.location().getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.AIR))
-                .save(consumer, modLoc(output.asItem().getName(output.asItem().getDefaultInstance()).getString()));
+                .save(consumer, modLoc(ForgeRegistries.ITEMS.getKey(output.asItem()).getPath()));
     }
 
     private void createSmithingGenerator(Consumer<FinishedRecipe> consumer, ItemLike input, ItemLike output) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(Items.NETHERITE_BLOCK), output.asItem())
+        UpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(Items.NETHERITE_BLOCK), RecipeCategory.MISC, output.asItem())
                 .unlocks("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(consumer, modLoc(output.asItem().getName(output.asItem().getDefaultInstance()).getString()));
+                .save(consumer, modLoc(ForgeRegistries.ITEMS.getKey(output.asItem()).getPath()));
     }
 
     private ResourceLocation modLoc(String input) {

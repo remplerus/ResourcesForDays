@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[44,)"
 issueTrackerURL="https://github.com/rempler/ResourcesForDays/issues/"
 license="LGPL 2.1"
 [[mods]]
@@ -15,18 +15,18 @@ If Ex Nihilo installed, includes Dust, Crushed Endstone and Crushed Netherrack G
 [[dependencies.rfd]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19,1.19.2]"
+    versionRange="[1.19.3]"
     ordering="NONE"
     side="BOTH"
-[[dependencies.rfd]]
-    modId="exnihilosequentia"
-    mandatory=false
-    versionRange="[1.19.2,)"
-    ordering="AFTER"
-    side="BOTH"
-[[dependencies.rfd]]
-    modId="cobblefordays"
-    mandatory=false
-    versionRange="[1.6.0,)"
-    ordering="NONE"
-    side="BOTH"
+#[[dependencies.rfd]]
+#    modId="exnihilosequentia"
+#    mandatory=false
+#    versionRange="[1.19.3,)"
+#    ordering="AFTER"
+#    side="BOTH"
+#[[dependencies.rfd]]
+#    modId="cobblefordays"
+#    mandatory=false
+#    versionRange="[1.6.0,)"
+#    ordering="NONE"
+#    side="BOTH"
