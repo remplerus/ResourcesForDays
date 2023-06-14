@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "rfd:netherrack_gen_tier_3"
-  }
+  },
+  "show_notification": true
 }

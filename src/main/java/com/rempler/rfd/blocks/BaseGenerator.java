@@ -5,7 +5,6 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -23,10 +22,11 @@ public abstract class BaseGenerator extends HorizontalDirectionalBlock implement
             BooleanOp.OR);
 
     protected BaseGenerator(int lightLevel) {
-        super(Properties.of(Material.GLASS) // Material.GLASS is required to help with the neighbor block rendering through the glass
+        super(Properties.of() // Material.GLASS is required to help with the neighbor block rendering through the glass
                 .sound(SoundType.STONE)
                 .strength(2.0f)
                 .lightLevel((light) -> lightLevel)
+                .pushReaction(PushReaction.BLOCK)
         );
     }
 
@@ -44,11 +44,5 @@ public abstract class BaseGenerator extends HorizontalDirectionalBlock implement
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.BLOCK;
     }
 }

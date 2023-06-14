@@ -108,5 +108,5 @@
   "block.rfd.soulsand_gen_tier_3": "Soulsand Gen Tier 3",
   "block.rfd.soulsand_gen_tier_4": "Soulsand Gen Tier 4",
   "block.rfd.soulsand_gen_tier_5": "Soulsand Gen Tier 5",
-  "itemGroup.rfd": "ResourcesForDays"
+  "item_group.rfd": "ResourcesForDays"
 }

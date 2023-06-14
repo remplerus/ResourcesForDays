@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class RfDItemTagGen extends ItemTagsProvider {
     public RfDItemTagGen(PackOutput po, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(po, lookupProvider, new RfDBlockTagGen(po, lookupProvider, existingFileHelper), ResourcesForDays.MODID, existingFileHelper);
+        super(po, lookupProvider, new RfDBlockTagGen(po, lookupProvider, existingFileHelper).contentsGetter(), ResourcesForDays.MODID, existingFileHelper);
     }
 
     protected void addTags(HolderLookup.Provider provider) {

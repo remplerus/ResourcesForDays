@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "rfd:obsidian_gen_tier_4"
-  }
+  },
+  "show_notification": true
 }

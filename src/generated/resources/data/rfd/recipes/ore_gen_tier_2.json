@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "rfd:ore_gen_tier_2"
-  }
+  },
+  "show_notification": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "rfd:gravel_gen_tier_5"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

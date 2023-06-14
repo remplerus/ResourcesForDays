@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "rfd:sand_gen_tier_1"
-  }
+  },
+  "show_notification": true
 }

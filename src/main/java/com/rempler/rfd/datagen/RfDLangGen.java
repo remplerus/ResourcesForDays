@@ -29,7 +29,7 @@ public class RfDLangGen extends LanguageProvider {
         add("block.generator.information", "Generates \u00A7e1 x {item} \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
         add("block.dyegenerator.information", "Generates \u00A7e1 x random dye \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
         add("block.oregenerator.information", "Generates \u00A7e1 x random item \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
-        add("itemGroup.rfd", "ResourcesForDays");
+        add("item_group.rfd", "ResourcesForDays");
 
     }
 }

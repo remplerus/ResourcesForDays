@@ -23,15 +23,15 @@ public class RfDDataGen {
         DataGenerator generator = event.getGenerator();
         PackOutput po = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        if (event.includeClient()){
+            generator.addProvider(true, new RfDBlockStateGen(po, event.getExistingFileHelper()));
+            generator.addProvider(true, new RfDLangGen(po));
+        }
         if (event.includeServer()){
             generator.addProvider(true, new LootTableProvider(po, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(RfDLootTableGen::new, LootContextParamSets.BLOCK))));
             generator.addProvider(true, new RfDRecipesGen(po));
             generator.addProvider(true, new RfDBlockTagGen(po, lookupProvider, event.getExistingFileHelper()));
             generator.addProvider(true, new RfDItemTagGen(po, lookupProvider, event.getExistingFileHelper()));
-        }
-        if (event.includeClient()){
-            generator.addProvider(true, new RfDBlockStateGen(po, event.getExistingFileHelper()));
-            generator.addProvider(true, new RfDLangGen(po));
         }
     }
 }

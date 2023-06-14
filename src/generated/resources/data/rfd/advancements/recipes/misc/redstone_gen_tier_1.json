@@ -30,5 +30,6 @@
     "recipes": [
       "rfd:redstone_gen_tier_1"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

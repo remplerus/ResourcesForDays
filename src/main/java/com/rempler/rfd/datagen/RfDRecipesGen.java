@@ -8,7 +8,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.UpgradeRecipeBuilder;
+import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -119,7 +119,7 @@ public class RfDRecipesGen extends RecipeProvider {
     }
 
     private void createSmithingGenerator(Consumer<FinishedRecipe> consumer, ItemLike input, ItemLike output) {
-        UpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(Items.NETHERITE_BLOCK), RecipeCategory.MISC, output.asItem())
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input), Ingredient.of(Items.NETHERITE_BLOCK), RecipeCategory.MISC, output.asItem())
                 .unlocks("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
                 .save(consumer, modLoc(ForgeRegistries.ITEMS.getKey(output.asItem()).getPath()));
     }

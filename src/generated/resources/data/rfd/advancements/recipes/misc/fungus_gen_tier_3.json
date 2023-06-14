@@ -30,5 +30,6 @@
     "recipes": [
       "rfd:fungus_gen_tier_3"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
