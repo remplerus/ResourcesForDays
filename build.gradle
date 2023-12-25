@@ -1,9 +1,9 @@
 plugins {
+    id 'java-library'
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle' version '[6.0.18,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'net.neoforged.gradle.userdev' version '7.0.57'
 }
 
 version = mod_version
@@ -16,61 +16,42 @@ base {
 java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Need this here so eclipse task generates correctly.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-minecraft {
-    mappings channel: mapping_channel, version: mapping_version
-    copyIdeResources = true
-    runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+runs {
+    configureEach {
+        systemProperty 'forge.logging.markers', 'REGISTRIES'
+        systemProperty 'forge.logging.console.level', 'debug'
 
-        server {
-            workingDirectory project.file('runserver')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+        modSource project.sourceSets.main
+    }
 
-        data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+    client {
+        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+    }
+
+    server {
+        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+        programArgument '--nogui'
+    }
+
+    data {
+        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']
 def replaceProperties = [
-        minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-        forge_version: forge_version, forge_version_range: forge_version_range,
+        minecraft_version   : mc_version, minecraft_version_range: minecraft_version_range,
+        neo_version         : neo_version, neo_version_range: neo_version_range,
         loader_version_range: loader_version_range,
-        mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-        mod_authors: mod_authors, mod_description: mod_description,
-        exnihilo_range: exnihilo_range, exnihilo_version: exnihilo_version
+        mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+        mod_authors         : mod_authors, mod_description: mod_description,
+        exnihilo_range      : exnihilo_range, exnihilo_version: exnihilo_version
 ]
-processResources {
+tasks.withType(ProcessResources).configureEach {
     inputs.properties replaceProperties
-    replaceProperties.put 'project', project
 
     filesMatching(resourceTargets) {
-        expand replaceProperties
+        expand replaceProperties + [project: project]
     }
 }
 
@@ -82,6 +63,15 @@ repositories {
         url 'https://maven.blamejared.com'
         content {
             includeGroup 'mezz.jei'
+        }
+    }
+    maven {
+        name 'REI'
+        url "https://maven.shedaniel.me"
+        content {
+            includeGroup 'me.shedaniel'
+            includeGroup 'me.shedaniel.cloth'
+            includeGroup 'dev.architectury'
         }
     }
 
@@ -126,12 +116,14 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.neoforged:forge:${minecraft_version}-${forge_version}"
+    implementation "net.neoforged:neoforge:${neo_version}"
 
-    implementation fg.deobf("novamachina.exnihilosequentia:exnihilosequentia:${minecraft_version}-${exnihilo_version}")
+    //implementation fg.deobf("novamachina.exnihilosequentia:exnihilosequentia:${minecraft_version}-${exnihilo_version}")
 
-    implementation fg.deobf("novamachina.novacore:novacore:${minecraft_version}-${nova_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:+")
+    //implementation fg.deobf("novamachina.novacore:novacore:${minecraft_version}-${nova_version}")
+    runtimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:14.+"
+    runtimeOnly "me.shedaniel.cloth:cloth-config-neoforge:13.+"
+    runtimeOnly "dev.architectury:architectury-neoforge:11.+"
 }
 
 jar {
@@ -147,5 +139,3 @@ jar {
         ])
     }
 }
-
-jar.finalizedBy('reobfJar')

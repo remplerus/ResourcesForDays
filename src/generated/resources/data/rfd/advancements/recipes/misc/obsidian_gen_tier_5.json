@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_block.rfd.obsidian_gen_tier_4",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_block.rfd.obsidian_gen_tier_4"
     ]
   ],
   "rewards": {

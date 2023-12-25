@@ -2,11 +2,10 @@ package com.rempler.rfd.datagen;
 
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.apache.commons.lang3.text.WordUtils;
 
 import java.util.ArrayList;
@@ -20,8 +19,8 @@ public class RfDLangGen extends LanguageProvider {
     @SuppressWarnings("deprecation")
     @Override
     protected void addTranslations() {
-        List<RegistryObject<Block>> blockList = new ArrayList<>(ModBlocks.BLOCKS.getEntries());
-        for (RegistryObject<Block> blockObject : blockList) {
+        List<DeferredHolder<Block, ?>> blockList = new ArrayList<>(ModBlocks.BLOCKS.getEntries());
+        for (DeferredHolder<Block, ?> blockObject : blockList) {
             Block block = blockObject.get();
             add(block, WordUtils.capitalizeFully(block.getName().getString().replace("_", " ").replace("block.rfd.", "")));
         }

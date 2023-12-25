@@ -4,7 +4,7 @@ import com.rempler.rfd.setup.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -111,25 +111,25 @@ public class RfDLootTableGen extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SOULSAND_GEN_T3.get());
         this.dropSelf(ModBlocks.SOULSAND_GEN_T4.get());
         this.dropSelf(ModBlocks.SOULSAND_GEN_T5.get());
-        this.dropSelf(ModBlocks.DUST_GEN_T1.get());
-        this.dropSelf(ModBlocks.DUST_GEN_T2.get());
-        this.dropSelf(ModBlocks.DUST_GEN_T3.get());
-        this.dropSelf(ModBlocks.DUST_GEN_T4.get());
-        this.dropSelf(ModBlocks.DUST_GEN_T5.get());
-        this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get());
-        this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get());
-        this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get());
-        this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get());
-        this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get());
-        this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get());
-        this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get());
-        this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get());
-        this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get());
-        this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get());
+        //this.dropSelf(ModBlocks.DUST_GEN_T1.get());
+        //this.dropSelf(ModBlocks.DUST_GEN_T2.get());
+        //this.dropSelf(ModBlocks.DUST_GEN_T3.get());
+        //this.dropSelf(ModBlocks.DUST_GEN_T4.get());
+        //this.dropSelf(ModBlocks.DUST_GEN_T5.get());
+        //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get());
+        //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get());
+        //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get());
+        //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get());
+        //this.dropSelf(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get());
+        //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get());
+        //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get());
+        //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get());
+        //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get());
+        //this.dropSelf(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get());
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return ModBlocks::iterator;
     }
 }

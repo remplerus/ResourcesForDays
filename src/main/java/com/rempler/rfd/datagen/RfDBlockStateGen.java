@@ -2,17 +2,15 @@ package com.rempler.rfd.datagen;
 
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModBlocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class RfDBlockStateGen extends BlockStateProvider {
     ResourceLocation stillLava = modLoc(blockLoc + "lava_still");
@@ -117,24 +115,24 @@ public class RfDBlockStateGen extends BlockStateProvider {
 
         String exnihilo = "exnihilosequentia";
         if (ModList.get().isLoaded(exnihilo)) {
-            ResourceLocation blockLowc = new ResourceLocation(exnihilo, blockLoc + "crushed_end_stone");
-            createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get(), blockLowc, tier1);
-            createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get(), blockLowc, tier2);
-            createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get(), blockLowc, tier3);
-            createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get(), blockLowc, tier4);
-            createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get(), blockLowc, tier5);
-            blockLowc = (new ResourceLocation(exnihilo, blockLoc + "crushed_netherrack"));
-            createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get(), blockLowc, stillLava, tier1);
-            createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get(), blockLowc, stillLava, tier2);
-            createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get(), blockLowc, stillLava, tier3);
-            createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get(), blockLowc, stillLava, tier4);
-            createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get(), blockLowc, stillLava, tier5);
-            blockLowc = (new ResourceLocation(exnihilo, blockLoc + "dust"));
-            createGenModels(ModBlocks.DUST_GEN_T1.get(), blockLowc, tier1);
-            createGenModels(ModBlocks.DUST_GEN_T2.get(), blockLowc, tier2);
-            createGenModels(ModBlocks.DUST_GEN_T3.get(), blockLowc, tier3);
-            createGenModels(ModBlocks.DUST_GEN_T4.get(), blockLowc, tier4);
-            createGenModels(ModBlocks.DUST_GEN_T5.get(), blockLowc, tier5);
+            //ResourceLocation blockLowc = new ResourceLocation(exnihilo, blockLoc + "crushed_end_stone");
+            //createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T1.get(), blockLowc, tier1);
+            //createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T2.get(), blockLowc, tier2);
+            //createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T3.get(), blockLowc, tier3);
+            //createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T4.get(), blockLowc, tier4);
+            //createGenModels(ModBlocks.CRUSHED_ENDSTONE_GEN_T5.get(), blockLowc, tier5);
+            //blockLowc = (new ResourceLocation(exnihilo, blockLoc + "crushed_netherrack"));
+            //createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T1.get(), blockLowc, stillLava, tier1);
+            //createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T2.get(), blockLowc, stillLava, tier2);
+            //createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T3.get(), blockLowc, stillLava, tier3);
+            //createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T4.get(), blockLowc, stillLava, tier4);
+            //createGenModels(ModBlocks.CRUSHED_NETHERRACK_GEN_T5.get(), blockLowc, stillLava, tier5);
+            //blockLowc = (new ResourceLocation(exnihilo, blockLoc + "dust"));
+            //createGenModels(ModBlocks.DUST_GEN_T1.get(), blockLowc, tier1);
+            //createGenModels(ModBlocks.DUST_GEN_T2.get(), blockLowc, tier2);
+            //createGenModels(ModBlocks.DUST_GEN_T3.get(), blockLowc, tier3);
+            //createGenModels(ModBlocks.DUST_GEN_T4.get(), blockLowc, tier4);
+            //createGenModels(ModBlocks.DUST_GEN_T5.get(), blockLowc, tier5);
         }
 
         String grass = blockLoc + "grass_block";
@@ -194,6 +192,6 @@ public class RfDBlockStateGen extends BlockStateProvider {
     }
 
     private String getRegistryName(Block b) {
-        return ForgeRegistries.BLOCKS.getKey(b).getPath();
+        return BuiltInRegistries.BLOCK.getKey(b).getPath();
     }
 }

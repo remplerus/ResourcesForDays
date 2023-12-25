@@ -11,13 +11,13 @@ authors="rempler"
 description='''${mod_description}'''
 [[dependencies.rfd]]
     modId="minecraft"
-    mandatory=true
+    type="required"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 [[dependencies.rfd]]
     modId="exnihilosequentia"
-    mandatory=false
+    type="optional"
     versionRange="${exnihilo_range}"
     ordering="AFTER"
     side="BOTH"

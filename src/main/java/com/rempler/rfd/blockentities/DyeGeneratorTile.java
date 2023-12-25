@@ -3,11 +3,12 @@ package com.rempler.rfd.blockentities;
 import com.rempler.rfd.setup.Config;
 import com.rempler.rfd.setup.ModBE;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.Tags;
 
 public class DyeGeneratorTile extends BaseRandomGeneratorTile {
     
@@ -16,7 +17,8 @@ public class DyeGeneratorTile extends BaseRandomGeneratorTile {
 
         int key = 1;
 
-        for (Item item : ForgeRegistries.ITEMS.tags().getTag(Tags.Items.DYES).stream().toList()) {
+        for (HolderSet.Named<Item> itemNamed : BuiltInRegistries.ITEM.getTag(Tags.Items.DYES).stream().toList()) {
+            Item item = BuiltInRegistries.ITEM.get(itemNamed.key().location());
             rndItems.put(key, item);
             rndProbs.put(key++, (int) (0.10 * 100));
         }

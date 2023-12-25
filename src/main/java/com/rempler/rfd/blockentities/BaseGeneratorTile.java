@@ -4,28 +4,27 @@ import com.rempler.rfd.setup.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 public abstract class BaseGeneratorTile extends BlockEntity {
     private int tickCount;
     private final ConfigCache configCache;
     protected ItemStackHandler handler;
     private int ticksPerGenCycle;
-    private LazyOptional<IItemHandler> cache = null;
+    private BlockCapabilityCache<IItemHandler, Direction> cache;
 
     protected BaseGeneratorTile(Config.Tiers tiers, BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
         super(tileEntityTypeIn, pos, state);
@@ -42,30 +41,24 @@ public abstract class BaseGeneratorTile extends BlockEntity {
     }
 
     private void updateCache() {
-        BlockEntity tileEntity = this.level != null && this.level.isLoaded(this.worldPosition.above()) ? this.level.getBlockEntity(this.worldPosition.above()) : null;
-        if (tileEntity != null) {
-            LazyOptional<IItemHandler> lazyOptional = tileEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, Direction.DOWN);
-            if (lazyOptional.isPresent()) {
-                if (this.cache != lazyOptional) {
-                    this.cache = lazyOptional;
-                    this.cache.addListener((l) -> this.updateCache());
-                }
+        BlockEntity tileEntity = this.level != null && this.level.isLoaded(this.worldPosition.above()) ? level.getBlockEntity(this.worldPosition.above()) : null;
+        if (level instanceof ServerLevel serverLevel) {
+            if (tileEntity != null) {
+                this.cache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, serverLevel, this.worldPosition.above(), Direction.DOWN);
             } else {
-                this.cache = LazyOptional.empty();
+                this.cache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, serverLevel, this.worldPosition, Direction.DOWN);
             }
-        } else {
-            this.cache = LazyOptional.empty();
         }
     }
 
-    private LazyOptional<IItemHandler> getCache() {
+    private BlockCapabilityCache<IItemHandler, Direction> getCache() {
         this.updateCache();
 
         return this.cache;
     }
 
     private void push(ItemStack stack) {
-        ItemStack result = this.getCache().map((iItemHandler) -> ItemHandlerHelper.insertItemStacked(iItemHandler, stack, false)).orElse(stack);
+        ItemStack result = ItemHandlerHelper.insertItemStacked(this.getCache().getCapability(), stack, false);
         if (result.isEmpty()) {
             this.setChanged();
         }
@@ -82,7 +75,7 @@ public abstract class BaseGeneratorTile extends BlockEntity {
                 stack = block;
             }
 
-            if (this.getCache().isPresent()) {
+            if (this.getCache().getCapability() != null) {
                 push(stack);
             } else {
                 ItemHandlerHelper.insertItemStacked(getHandler(), stack, false);
@@ -103,16 +96,6 @@ public abstract class BaseGeneratorTile extends BlockEntity {
             handler = new ItemStackHandler(1);
         }
         return handler;
-    }
-
-    @SuppressWarnings("unchecked")
-    @Nonnull
-    @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (cap == ForgeCapabilities.ITEM_HANDLER){
-            return LazyOptional.of(() -> (T) getHandler());
-        }
-        return super.getCapability(cap, side);
     }
 
     static class ConfigCache {

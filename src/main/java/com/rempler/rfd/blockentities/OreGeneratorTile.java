@@ -3,12 +3,11 @@ package com.rempler.rfd.blockentities;
 import com.rempler.rfd.setup.Config;
 import com.rempler.rfd.setup.ModBE;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class OreGeneratorTile extends BaseRandomGeneratorTile {
     
@@ -38,8 +37,8 @@ public class OreGeneratorTile extends BaseRandomGeneratorTile {
             }
 
             ResourceLocation resourceKey = new ResourceLocation(itemName);
-            if (ForgeRegistries.ITEMS.containsKey(resourceKey)) {
-                Item item = ForgeRegistries.ITEMS.getValue(resourceKey);
+            if (BuiltInRegistries.ITEM.containsKey(resourceKey)) {
+                Item item = BuiltInRegistries.ITEM.get(resourceKey);
 
                 rndItems.put(key, item);
                 rndProbs.put(key, (int)(probability * 100));

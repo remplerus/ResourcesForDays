@@ -1,6 +1,7 @@
 package com.rempler.rfd.blocks;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import com.mojang.serialization.MapCodec;
 import com.rempler.rfd.blockentities.TieredGeneratorTile;
 import com.rempler.rfd.setup.Config;
 import net.minecraft.client.Minecraft;
@@ -27,8 +28,6 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import org.lwjgl.glfw.GLFW;
 
 import javax.annotation.Nullable;
@@ -77,7 +76,6 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flags) {
         if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
             Component information = Component.translatable("block.generator.information");
@@ -117,6 +115,11 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
                 }
             };
         }
+        return null;
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
         return null;
     }
 }

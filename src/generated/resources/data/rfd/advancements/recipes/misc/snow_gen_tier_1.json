@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_Snow Block",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_Snow Block"
     ]
   ],
   "rewards": {

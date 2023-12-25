@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_Redstone Dust",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_Redstone Dust"
     ]
   ],
   "rewards": {

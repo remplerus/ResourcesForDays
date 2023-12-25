@@ -4,25 +4,23 @@ import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Lists;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.nio.file.Path;
 import java.util.List;
 
-@Mod.EventBusSubscriber
 public class Config {
 
     public static final String CATEGORY_GENERAL = "general";
     public static final String CATEGORY_OREGEN = "oregenerator";
 
-    private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
-    public static ForgeConfigSpec COMMON_CONFIG;
+    private static final ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
+    public static ModConfigSpec COMMON_CONFIG;
 
-    public static ForgeConfigSpec.BooleanValue GENERATE_DUST;
-    public static ForgeConfigSpec.BooleanValue ENABLE_ORE_GENERATOR;
-    public static ForgeConfigSpec.BooleanValue ENABLE_DYE_GENERATOR;
-    public static ForgeConfigSpec.ConfigValue<List<? extends String>> ORE_GENERATOR_ITEMS;
+    public static ModConfigSpec.BooleanValue GENERATE_DUST;
+    public static ModConfigSpec.BooleanValue ENABLE_ORE_GENERATOR;
+    public static ModConfigSpec.BooleanValue ENABLE_DYE_GENERATOR;
+    public static ModConfigSpec.ConfigValue<List<? extends String>> ORE_GENERATOR_ITEMS;
 
     public static Tiers tier1;
     public static Tiers tier2;
@@ -56,8 +54,8 @@ public class Config {
     }
 
     public static class Tiers {
-        public final ForgeConfigSpec.IntValue interval;
-        Tiers(ForgeConfigSpec.Builder builder, String tier, int interval) {
+        public final ModConfigSpec.IntValue interval;
+        Tiers(ModConfigSpec.Builder builder, String tier, int interval) {
             builder.comment("Tier: " + tier)
                     .push(tier);
             this.interval = builder.comment("Ticks between every generation update.")
@@ -67,7 +65,7 @@ public class Config {
         }
     }
 
-    public static void loadConfig(ForgeConfigSpec spec, Path path) {
+    public static void loadConfig(ModConfigSpec spec, Path path) {
         final CommentedFileConfig configData = CommentedFileConfig.builder(path)
                 .sync()
                 .autosave()

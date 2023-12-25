@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_End Stone",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_End Stone"
     ]
   ],
   "rewards": {

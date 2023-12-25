@@ -6,9 +6,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +29,7 @@ public class RfDDataGen {
         }
         if (event.includeServer()){
             generator.addProvider(true, new LootTableProvider(po, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(RfDLootTableGen::new, LootContextParamSets.BLOCK))));
-            generator.addProvider(true, new RfDRecipesGen(po));
+            generator.addProvider(true, new RfDRecipesGen(po, lookupProvider));
             generator.addProvider(true, new RfDBlockTagGen(po, lookupProvider, event.getExistingFileHelper()));
             generator.addProvider(true, new RfDItemTagGen(po, lookupProvider, event.getExistingFileHelper()));
         }

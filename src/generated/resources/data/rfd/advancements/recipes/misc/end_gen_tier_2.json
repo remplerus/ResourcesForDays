@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_block.rfd.end_gen_tier_1",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_block.rfd.end_gen_tier_1"
     ]
   ],
   "rewards": {
