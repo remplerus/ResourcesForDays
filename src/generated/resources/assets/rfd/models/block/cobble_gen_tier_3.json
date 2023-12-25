@@ -1,0 +1,10 @@
+{
+  "parent": "rfd:block/tier_3",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "lava": "rfd:block/water_still",
+    "texture_side": "minecraft:block/cobblestone",
+    "texture_up": "minecraft:block/cobblestone",
+    "water": "rfd:block/lava_still"
+  }
+}

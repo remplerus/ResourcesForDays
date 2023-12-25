@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rfd:cobble_gen_tier_4"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rfd:blocks/cobble_gen_tier_4"
+}

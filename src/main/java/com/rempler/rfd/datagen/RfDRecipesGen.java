@@ -36,8 +36,8 @@ public class RfDRecipesGen extends RecipeProvider {
                 ModBlocks.CLAY_GEN_T3.get(), ModBlocks.CLAY_GEN_T4.get(), ModBlocks.CLAY_GEN_T5.get(), water, water);
         createGenerator(consumer, Tags.Items.STONE, ModBlocks.CLEAN_GEN_T1.get(), ModBlocks.CLEAN_GEN_T2.get(),
                 ModBlocks.CLEAN_GEN_T3.get(), ModBlocks.CLEAN_GEN_T4.get(), ModBlocks.CLEAN_GEN_T5.get(), lava, water);
-        //createGenerator(consumer, Tags.Items.COBBLESTONE, ModBlocks.COBBLE_GEN_T1.get(), ModBlocks.COBBLE_GEN_T2.get(),
-        //        ModBlocks.COBBLE_GEN_T3.get(), ModBlocks.COBBLE_GEN_T4.get(), ModBlocks.COBBLE_GEN_T5.get(), lava, water);
+        createGenerator(consumer, Tags.Items.COBBLESTONE, ModBlocks.COBBLE_GEN_T1.get(), ModBlocks.COBBLE_GEN_T2.get(),
+                ModBlocks.COBBLE_GEN_T3.get(), ModBlocks.COBBLE_GEN_T4.get(), ModBlocks.COBBLE_GEN_T5.get(), lava, water);
         createGenerator(consumer, Items.DIRT, ModBlocks.DIRT_GEN_T1.get(), ModBlocks.DIRT_GEN_T2.get(),
                 ModBlocks.DIRT_GEN_T3.get(), ModBlocks.DIRT_GEN_T4.get(), ModBlocks.DIRT_GEN_T5.get(), water, water);
         createGenerator(consumer, Tags.Items.DYES, ModBlocks.DYE_GEN_T1.get(), ModBlocks.DYE_GEN_T2.get(),

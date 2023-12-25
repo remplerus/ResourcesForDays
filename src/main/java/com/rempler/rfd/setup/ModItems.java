@@ -14,11 +14,11 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ResourcesForDays.MODID);
     private static final Item.Properties itemProperties = new Item.Properties();
 
-    //public static final RegistryObject<Item> COBBLE_ITEM_T1 = ITEMS.register("cobble_gen_tier_1", () -> new BlockItem(ModBlocks.COBBLE_GEN_T1.get(), itemProperties));
-    //public static final RegistryObject<Item> COBBLE_ITEM_T2 = ITEMS.register("cobble_gen_tier_2", () -> new BlockItem(ModBlocks.COBBLE_GEN_T2.get(), itemProperties));
-    //public static final RegistryObject<Item> COBBLE_ITEM_T3 = ITEMS.register("cobble_gen_tier_3", () -> new BlockItem(ModBlocks.COBBLE_GEN_T3.get(), itemProperties));
-    //public static final RegistryObject<Item> COBBLE_ITEM_T4 = ITEMS.register("cobble_gen_tier_4", () -> new BlockItem(ModBlocks.COBBLE_GEN_T4.get(), itemProperties));
-    //public static final RegistryObject<Item> COBBLE_ITEM_T5 = ITEMS.register("cobble_gen_tier_5", () -> new BlockItem(ModBlocks.COBBLE_GEN_T5.get(), itemProperties));
+    public static final RegistryObject<Item> COBBLE_ITEM_T1 = ITEMS.register("cobble_gen_tier_1", () -> new BlockItem(ModBlocks.COBBLE_GEN_T1.get(), itemProperties));
+    public static final RegistryObject<Item> COBBLE_ITEM_T2 = ITEMS.register("cobble_gen_tier_2", () -> new BlockItem(ModBlocks.COBBLE_GEN_T2.get(), itemProperties));
+    public static final RegistryObject<Item> COBBLE_ITEM_T3 = ITEMS.register("cobble_gen_tier_3", () -> new BlockItem(ModBlocks.COBBLE_GEN_T3.get(), itemProperties));
+    public static final RegistryObject<Item> COBBLE_ITEM_T4 = ITEMS.register("cobble_gen_tier_4", () -> new BlockItem(ModBlocks.COBBLE_GEN_T4.get(), itemProperties));
+    public static final RegistryObject<Item> COBBLE_ITEM_T5 = ITEMS.register("cobble_gen_tier_5", () -> new BlockItem(ModBlocks.COBBLE_GEN_T5.get(), itemProperties));
     public static final RegistryObject<Item> CLAY_ITEM_T1 = ITEMS.register("clay_gen_tier_1", () -> new BlockItem(ModBlocks.CLAY_GEN_T1.get(), itemProperties));
     public static final RegistryObject<Item> CLAY_ITEM_T2 = ITEMS.register("clay_gen_tier_2", () -> new BlockItem(ModBlocks.CLAY_GEN_T2.get(), itemProperties));
     public static final RegistryObject<Item> CLAY_ITEM_T3 = ITEMS.register("clay_gen_tier_3", () -> new BlockItem(ModBlocks.CLAY_GEN_T3.get(), itemProperties));

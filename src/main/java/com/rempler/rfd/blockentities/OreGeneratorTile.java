@@ -47,31 +47,31 @@ public class OreGeneratorTile extends BaseRandomGeneratorTile {
             }
         }
 
-        if (key == 1) {
-            rndItems.put(key, Items.COAL_ORE);
-            rndProbs.put(key++, (int)(0.50 * 100));
-
-            rndItems.put(key, Items.IRON_ORE);
-            rndProbs.put(key++, (int)(0.45 * 100));
-
-            rndItems.put(key, Items.GOLD_ORE);
-            rndProbs.put(key++, (int)(0.25 * 100));
-
-            rndItems.put(key, Items.LAPIS_ORE);
-            rndProbs.put(key++, (int)(0.10 * 100));
-
-            rndItems.put(key, Items.REDSTONE_ORE);
-            rndProbs.put(key++, (int)(0.10 * 100));
-
-            rndItems.put(key, Items.DIAMOND_ORE);
-            rndProbs.put(key++, (int)(0.05 * 100));
-
-            rndItems.put(key, Items.EMERALD_ORE);
-            rndProbs.put(key++, (int)(0.01 * 100));
-
-            rndItems.put(key, Items.NETHER_QUARTZ_ORE);
-            rndProbs.put(key++, (int)(0.08 * 100));
-        }
+        //if (key == 1) {
+        //    rndItems.put(key, Items.COAL_ORE);
+        //    rndProbs.put(key++, (int)(0.50 * 100));
+//
+        //    rndItems.put(key, Items.IRON_ORE);
+        //    rndProbs.put(key++, (int)(0.45 * 100));
+//
+        //    rndItems.put(key, Items.GOLD_ORE);
+        //    rndProbs.put(key++, (int)(0.25 * 100));
+//
+        //    rndItems.put(key, Items.LAPIS_ORE);
+        //    rndProbs.put(key++, (int)(0.10 * 100));
+//
+        //    rndItems.put(key, Items.REDSTONE_ORE);
+        //    rndProbs.put(key++, (int)(0.10 * 100));
+//
+        //    rndItems.put(key, Items.DIAMOND_ORE);
+        //    rndProbs.put(key++, (int)(0.05 * 100));
+//
+        //    rndItems.put(key, Items.EMERALD_ORE);
+        //    rndProbs.put(key++, (int)(0.01 * 100));
+//
+        //    rndItems.put(key, Items.NETHER_QUARTZ_ORE);
+        //    rndProbs.put(key++, (int)(0.08 * 100));
+        //}
     }
 
     public void tickServer() {
@@ -89,7 +89,7 @@ public class OreGeneratorTile extends BaseRandomGeneratorTile {
         };
     }
 
-    public static net.minecraft.world.level.block.entity.BlockEntityType.BlockEntitySupplier<OreGeneratorTile> makeSupplier(int Tier) {
+    public static BlockEntityType.BlockEntitySupplier<OreGeneratorTile> makeSupplier(int Tier) {
         return switch(Tier) {
             case 1 -> (pos, state) -> new OreGeneratorTile(Config.tier1, ModBE.ORE_T1_BE.get(), pos, state);
             case 2 -> (pos, state) -> new OreGeneratorTile(Config.tier2, ModBE.ORE_T2_BE.get(), pos, state);

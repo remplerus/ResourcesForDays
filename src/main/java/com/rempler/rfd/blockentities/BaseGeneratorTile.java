@@ -33,10 +33,6 @@ public abstract class BaseGeneratorTile extends BlockEntity {
         this.ticksPerGenCycle = configCache.getInterval();
     }
 
-    public void tickServer(Block block) {
-        tickServer(block.asItem(), block);
-    }
-
     public void tickServer(Item item, Block block) {
         tickServer(new ItemStack(item), new ItemStack(block));
     }

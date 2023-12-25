@@ -27,6 +27,7 @@ public class RfDLangGen extends LanguageProvider {
         }
         add("block.holdshift.information", "Hold \u00A7eShift \u00A7ffor more information.");
         add("block.generator.information", "Generates \u00A7e1 x {item} \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
+        add("block.generator.information.exnihilo", "\u00A7eThere's an issue with Ex Nihilo that prevents the generator from generating correct items!");
         add("block.dyegenerator.information", "Generates \u00A7e1 x random dye \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
         add("block.oregenerator.information", "Generates \u00A7e1 x random item \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
         add("item_group.rfd", "ResourcesForDays");

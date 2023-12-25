@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "base": {
+    "item": "rfd:cobble_gen_tier_4"
+  },
+  "result": {
+    "item": "rfd:cobble_gen_tier_5"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

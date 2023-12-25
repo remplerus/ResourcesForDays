@@ -25,3 +25,4 @@ runserver
 build.bat
 setup*.bat
 /src/main/resources/assets/exnihilosequentia/
+/src/main/resources/assets/exnihilosequentia-/

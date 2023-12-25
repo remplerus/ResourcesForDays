@@ -1,5 +1,9 @@
 {
   "values": [
+    "rfd:cobble_gen_tier_2",
+    "rfd:cobble_gen_tier_3",
+    "rfd:cobble_gen_tier_4",
+    "rfd:cobble_gen_tier_5",
     "rfd:clay_gen_tier_2",
     "rfd:clay_gen_tier_3",
     "rfd:clay_gen_tier_4",

@@ -26,11 +26,11 @@ public class RfDLootTableGen extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CLEAN_GEN_T3.get());
         this.dropSelf(ModBlocks.CLEAN_GEN_T4.get());
         this.dropSelf(ModBlocks.CLEAN_GEN_T5.get());
-        //this.dropSelf(ModBlocks.COBBLE_GEN_T1.get());
-        //this.dropSelf(ModBlocks.COBBLE_GEN_T2.get());
-        //this.dropSelf(ModBlocks.COBBLE_GEN_T3.get());
-        //this.dropSelf(ModBlocks.COBBLE_GEN_T4.get());
-        //this.dropSelf(ModBlocks.COBBLE_GEN_T5.get());
+        this.dropSelf(ModBlocks.COBBLE_GEN_T1.get());
+        this.dropSelf(ModBlocks.COBBLE_GEN_T2.get());
+        this.dropSelf(ModBlocks.COBBLE_GEN_T3.get());
+        this.dropSelf(ModBlocks.COBBLE_GEN_T4.get());
+        this.dropSelf(ModBlocks.COBBLE_GEN_T5.get());
         this.dropSelf(ModBlocks.DIRT_GEN_T1.get());
         this.dropSelf(ModBlocks.DIRT_GEN_T2.get());
         this.dropSelf(ModBlocks.DIRT_GEN_T3.get());

@@ -2,7 +2,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.neoforged.gradle' version '[6.0.18,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
@@ -62,7 +62,8 @@ def replaceProperties = [
         forge_version: forge_version, forge_version_range: forge_version_range,
         loader_version_range: loader_version_range,
         mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-        mod_authors: mod_authors, mod_description: mod_description
+        mod_authors: mod_authors, mod_description: mod_description,
+        exnihilo_range: exnihilo_range, exnihilo_version: exnihilo_version
 ]
 processResources {
     inputs.properties replaceProperties
@@ -78,17 +79,40 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     maven {
         name 'jei'
-        url 'https://dvs1.progwml6.com/files/maven'
+        url 'https://maven.blamejared.com'
         content {
             includeGroup 'mezz.jei'
         }
     }
 
     maven {
-        name 'ex nihilo repo'
-        url 'https://repo.jacob-williams.me/repository/internal/'
+        name 'NovaMachina Mods - Release'
+        url 'https://dl.cloudsmith.io/public/novamachina-mods/release/maven/'
         content {
+            includeGroup 'novamachina.novacore'
             includeGroup 'novamachina.exnihilosequentia'
+            includeGroup 'novamachina.exnihilothermal'
+            includeGroup 'novamachina.exnihilomekanism'
+            includeGroup 'novamachina.exnihiloae'
+            includeGroup 'novamachina.exnihilotinkers'
+        }
+        mavenContent {
+            releasesOnly()
+        }
+    }
+    maven {
+        name 'NovaMachina Mods - Snapshot'
+        url 'https://dl.cloudsmith.io/public/novamachina-mods/snapshot/maven/'
+        content {
+            includeGroup 'novamachina.novacore'
+            includeGroup 'novamachina.exnihilosequentia'
+            includeGroup 'novamachina.exnihilothermal'
+            includeGroup 'novamachina.exnihilomekanism'
+            includeGroup 'novamachina.exnihiloae'
+            includeGroup 'novamachina.exnihilotinkers'
+        }
+        mavenContent {
+            snapshotsOnly()
         }
     }
 
@@ -102,12 +126,12 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    
-    //implementation fg.deobf("curse.maven:cfd-349460:3975349")
-    //implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.19.2-4.1.0.53-beta")
+    minecraft "net.neoforged:forge:${minecraft_version}-${forge_version}"
 
-    //runtimeOnly fg.deobf("mezz.jei:jei-1.19.3-forge:+")
+    implementation fg.deobf("novamachina.exnihilosequentia:exnihilosequentia:${minecraft_version}-${exnihilo_version}")
+
+    implementation fg.deobf("novamachina.novacore:novacore:${minecraft_version}-${nova_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:+")
 }
 
 jar {
