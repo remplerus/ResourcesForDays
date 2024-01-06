@@ -109,16 +109,16 @@ public class ModBlocks {
     public static final RegistryObject<BaseGenerator> SOULSAND_GEN_T3 = BLOCKS.register("soulsand_gen_tier_3", () -> make15Generator(3, Blocks.SOUL_SAND));
     public static final RegistryObject<BaseGenerator> SOULSAND_GEN_T4 = BLOCKS.register("soulsand_gen_tier_4", () -> make15Generator(4, Blocks.SOUL_SAND));
     public static final RegistryObject<BaseGenerator> SOULSAND_GEN_T5 = BLOCKS.register("soulsand_gen_tier_5", () -> make15Generator(5, Blocks.SOUL_SAND));
-    public static final RegistryObject<DyeGenerator> DYE_GEN_T1 = BLOCKS.register("dye_gen_tier_1", () -> new DyeGenerator(8));
-    public static final RegistryObject<DyeGenerator> DYE_GEN_T2 = BLOCKS.register("dye_gen_tier_2", () -> new DyeGenerator(8));
-    public static final RegistryObject<DyeGenerator> DYE_GEN_T3 = BLOCKS.register("dye_gen_tier_3", () -> new DyeGenerator(8));
-    public static final RegistryObject<DyeGenerator> DYE_GEN_T4 = BLOCKS.register("dye_gen_tier_4", () -> new DyeGenerator(8));
-    public static final RegistryObject<DyeGenerator> DYE_GEN_T5 = BLOCKS.register("dye_gen_tier_5", () -> new DyeGenerator(8));
-    public static final RegistryObject<OreGenerator> ORE_GEN_T1 = BLOCKS.register("ore_gen_tier_1", () -> new OreGenerator(15));
-    public static final RegistryObject<OreGenerator> ORE_GEN_T2 = BLOCKS.register("ore_gen_tier_2", () -> new OreGenerator(15));
-    public static final RegistryObject<OreGenerator> ORE_GEN_T3 = BLOCKS.register("ore_gen_tier_3", () -> new OreGenerator(15));
-    public static final RegistryObject<OreGenerator> ORE_GEN_T4 = BLOCKS.register("ore_gen_tier_4", () -> new OreGenerator(15));
-    public static final RegistryObject<OreGenerator> ORE_GEN_T5 = BLOCKS.register("ore_gen_tier_5", () -> new OreGenerator(15));
+    public static final RegistryObject<DyeGenerator> DYE_GEN_T1 = BLOCKS.register("dye_gen_tier_1", () -> new DyeGenerator(1));
+    public static final RegistryObject<DyeGenerator> DYE_GEN_T2 = BLOCKS.register("dye_gen_tier_2", () -> new DyeGenerator(2));
+    public static final RegistryObject<DyeGenerator> DYE_GEN_T3 = BLOCKS.register("dye_gen_tier_3", () -> new DyeGenerator(3));
+    public static final RegistryObject<DyeGenerator> DYE_GEN_T4 = BLOCKS.register("dye_gen_tier_4", () -> new DyeGenerator(4));
+    public static final RegistryObject<DyeGenerator> DYE_GEN_T5 = BLOCKS.register("dye_gen_tier_5", () -> new DyeGenerator(5));
+    public static final RegistryObject<OreGenerator> ORE_GEN_T1 = BLOCKS.register("ore_gen_tier_1", () -> new OreGenerator(1));
+    public static final RegistryObject<OreGenerator> ORE_GEN_T2 = BLOCKS.register("ore_gen_tier_2", () -> new OreGenerator(2));
+    public static final RegistryObject<OreGenerator> ORE_GEN_T3 = BLOCKS.register("ore_gen_tier_3", () -> new OreGenerator(3));
+    public static final RegistryObject<OreGenerator> ORE_GEN_T4 = BLOCKS.register("ore_gen_tier_4", () -> new OreGenerator(4));
+    public static final RegistryObject<OreGenerator> ORE_GEN_T5 = BLOCKS.register("ore_gen_tier_5", () -> new OreGenerator(5));
 
     public static final RegistryObject<BaseGenerator> DUST_GEN_T1 = BLOCKS.register("dust_gen_tier_1", () -> makeEXNGenerator(1, EXNBlocks.DUST, Blocks.SAND));
     public static final RegistryObject<BaseGenerator> DUST_GEN_T2 = BLOCKS.register("dust_gen_tier_2", () -> makeEXNGenerator(2, EXNBlocks.DUST, Blocks.SAND));
