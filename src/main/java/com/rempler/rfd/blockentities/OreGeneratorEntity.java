@@ -8,9 +8,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.Tags;
-
-import java.util.HashMap;
 
 public class OreGeneratorEntity extends BaseRandomGeneratorEntity {
     public OreGeneratorEntity(Config.Tiers tiers, BlockEntityType<?> type, BlockPos pos, BlockState state) {

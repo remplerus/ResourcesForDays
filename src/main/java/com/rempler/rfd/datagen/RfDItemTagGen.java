@@ -3,7 +3,6 @@ package com.rempler.rfd.datagen;
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.setup.ModItems;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Item;

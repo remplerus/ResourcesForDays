@@ -2,7 +2,6 @@ package com.rempler.rfd.datagen;
 
 import com.rempler.rfd.ResourcesForDays;
 import com.rempler.rfd.api.DefaultMaterials;
-import com.rempler.rfd.setup.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

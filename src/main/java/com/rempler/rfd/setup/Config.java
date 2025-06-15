@@ -2,18 +2,8 @@ package com.rempler.rfd.setup;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Lists;
-import com.mojang.brigadier.CommandDispatcher;
-import com.rempler.rfd.ResourcesForDays;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Tiers;
-import net.neoforged.fml.ModList;
-import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 

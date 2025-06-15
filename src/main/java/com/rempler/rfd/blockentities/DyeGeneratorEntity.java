@@ -10,8 +10,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.Tags;
 
-import java.util.HashMap;
-
 public class DyeGeneratorEntity extends BaseRandomGeneratorEntity {
     
     public DyeGeneratorEntity(Config.Tiers tiers, BlockEntityType<?> type, BlockPos pos, BlockState state) {

@@ -4,7 +4,6 @@ import com.rempler.rfd.blockentities.OreGeneratorEntity;
 import com.rempler.rfd.setup.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;

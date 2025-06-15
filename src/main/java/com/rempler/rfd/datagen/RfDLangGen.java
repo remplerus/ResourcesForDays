@@ -22,7 +22,7 @@ public class RfDLangGen extends LanguageProvider {
         List<DeferredHolder<Block, ?>> blockList = new ArrayList<>(ModBlocks.BLOCKS.getEntries());
         for (DeferredHolder<Block, ?> blockObject : blockList) {
             Block block = blockObject.get();
-            add(block, WordUtils.capitalizeFully(block.getName().getString().replace("_", " ").replace("block.rfd.", "")));
+            add(block, WordUtils.capitalizeFully(block.getName().getString().replace("_", " ").replace("block.rfd.", "").replace(" T", " Tier ")));
         }
         add("block.holdshift.information", "Hold \u00A7eShift \u00A7ffor more information.");
         add("block.generator.information", "Generates \u00A7e1 x {item} \u00A7fevery generation cycle of \u00A7e{ticks} \u00A7fticks.");
