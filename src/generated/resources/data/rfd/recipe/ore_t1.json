@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:lava_bucket"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:water_bucket"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "w": {
+      "tag": "minecraft:logs"
+    },
+    "x": {
+      "tag": "c:ores"
+    }
+  },
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rfd:ore_t1"
+  }
+}

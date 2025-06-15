@@ -21,7 +21,7 @@ public class RfDBlockTagGen extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         for (int i = 0; i < ModBlocks.BLOCKS.getEntries().size(); i++) {
             Block block = ModBlocks.BLOCKS.getEntries().stream().toList().get(i).get();
-            if (block.getName().getString().contains("tier_1")) {
+            if (block.getName().getString().contains("_t1")) {
                 tag(ResourcesForDays.GEN_BLOCKS_BLOCK_WOODEN).add(block);
             } else {
                 tag(ResourcesForDays.GEN_BLOCKS_BLOCK).add(block);

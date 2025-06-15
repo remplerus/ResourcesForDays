@@ -1,7 +1,7 @@
 package com.rempler.rfd.datagen;
 
 import com.rempler.rfd.ResourcesForDays;
-import com.rempler.rfd.setup.ModBlocks;
+import com.rempler.rfd.api.DefaultMaterials;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,49 +33,49 @@ public class RfDRecipesGen extends RecipeProvider {
     protected void buildRecipes(@NotNull RecipeOutput consumer) {
         Item water = Items.WATER_BUCKET;
         Item lava = Items.LAVA_BUCKET;
-        createGenerator(consumer, Items.CLAY_BALL, ModBlocks.CLAY_GEN_T1.get(), ModBlocks.CLAY_GEN_T2.get(),
-                ModBlocks.CLAY_GEN_T3.get(), ModBlocks.CLAY_GEN_T4.get(), ModBlocks.CLAY_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.STONE, ModBlocks.CLEAN_GEN_T1.get(), ModBlocks.CLEAN_GEN_T2.get(),
-                ModBlocks.CLEAN_GEN_T3.get(), ModBlocks.CLEAN_GEN_T4.get(), ModBlocks.CLEAN_GEN_T5.get(), lava, water);
-        createGenerator(consumer, Tags.Items.COBBLESTONE, ModBlocks.COBBLE_GEN_T1.get(), ModBlocks.COBBLE_GEN_T2.get(),
-                ModBlocks.COBBLE_GEN_T3.get(), ModBlocks.COBBLE_GEN_T4.get(), ModBlocks.COBBLE_GEN_T5.get(), lava, water);
-        createGenerator(consumer, Items.DIRT, ModBlocks.DIRT_GEN_T1.get(), ModBlocks.DIRT_GEN_T2.get(),
-                ModBlocks.DIRT_GEN_T3.get(), ModBlocks.DIRT_GEN_T4.get(), ModBlocks.DIRT_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.DYES, ModBlocks.DYE_GEN_T1.get(), ModBlocks.DYE_GEN_T2.get(),
-                ModBlocks.DYE_GEN_T3.get(), ModBlocks.DYE_GEN_T4.get(), ModBlocks.DYE_GEN_T5.get(), water, water);
-        createGenerator(consumer, Items.END_STONE, ModBlocks.END_GEN_T1.get(), ModBlocks.END_GEN_T2.get(),
-                ModBlocks.END_GEN_T3.get(), ModBlocks.END_GEN_T4.get(), ModBlocks.END_GEN_T5.get(), lava, lava);
-        createGenerator(consumer, Items.MYCELIUM, ModBlocks.FUNGUS_GEN_T1.get(), ModBlocks.FUNGUS_GEN_T2.get(),
-                ModBlocks.FUNGUS_GEN_T3.get(), ModBlocks.FUNGUS_GEN_T4.get(), ModBlocks.FUNGUS_GEN_T5.get(), water, water);
-        createGenerator(consumer, Items.GLOWSTONE, ModBlocks.GLOWSTONE_GEN_T1.get(), ModBlocks.GLOWSTONE_GEN_T2.get(),
-                ModBlocks.GLOWSTONE_GEN_T3.get(), ModBlocks.GLOWSTONE_GEN_T4.get(), ModBlocks.GLOWSTONE_GEN_T5.get(), lava, lava);
-        createGenerator(consumer, Items.GRASS_BLOCK, ModBlocks.GRASS_GEN_T1.get(), ModBlocks.GRASS_GEN_T2.get(),
-                ModBlocks.GRASS_GEN_T3.get(), ModBlocks.GRASS_GEN_T4.get(), ModBlocks.GRASS_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.GRAVEL, ModBlocks.GRAVEL_GEN_T1.get(), ModBlocks.GRAVEL_GEN_T2.get(),
-                ModBlocks.GRAVEL_GEN_T3.get(), ModBlocks.GRAVEL_GEN_T4.get(), ModBlocks.GRAVEL_GEN_T5.get(), lava, water);
-        createGenerator(consumer, Items.ICE, ModBlocks.ICE_GEN_T1.get(), ModBlocks.ICE_GEN_T2.get(),
-                ModBlocks.ICE_GEN_T3.get(), ModBlocks.ICE_GEN_T4.get(), ModBlocks.ICE_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.NETHERRACK, ModBlocks.NETHERRACK_GEN_T1.get(), ModBlocks.NETHERRACK_GEN_T2.get(),
-                ModBlocks.NETHERRACK_GEN_T3.get(), ModBlocks.NETHERRACK_GEN_T4.get(), ModBlocks.NETHERRACK_GEN_T5.get(), lava, lava);
-        createGenerator(consumer, Tags.Items.OBSIDIAN, ModBlocks.OBSIDIAN_GEN_T1.get(), ModBlocks.OBSIDIAN_GEN_T2.get(),
-                ModBlocks.OBSIDIAN_GEN_T3.get(), ModBlocks.OBSIDIAN_GEN_T4.get(), ModBlocks.OBSIDIAN_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.ORES, ModBlocks.ORE_GEN_T1.get(), ModBlocks.ORE_GEN_T2.get(),
-                ModBlocks.ORE_GEN_T3.get(), ModBlocks.ORE_GEN_T4.get(), ModBlocks.ORE_GEN_T5.get(), water, lava);
-        createGenerator(consumer, Items.QUARTZ, ModBlocks.QUARTZ_GEN_T1.get(), ModBlocks.QUARTZ_GEN_T2.get(),
-                ModBlocks.QUARTZ_GEN_T3.get(), ModBlocks.QUARTZ_GEN_T4.get(), ModBlocks.QUARTZ_GEN_T5.get(), lava, lava);
-        createGenerator(consumer, Items.REDSTONE, ModBlocks.REDSTONE_GEN_T1.get(), ModBlocks.REDSTONE_GEN_T2.get(),
-                ModBlocks.REDSTONE_GEN_T3.get(), ModBlocks.REDSTONE_GEN_T4.get(), ModBlocks.REDSTONE_GEN_T5.get(), water, water);
-        createGenerator(consumer, Tags.Items.SAND, ModBlocks.SAND_GEN_T1.get(), ModBlocks.SAND_GEN_T2.get(),
-                ModBlocks.SAND_GEN_T3.get(), ModBlocks.SAND_GEN_T4.get(), ModBlocks.SAND_GEN_T5.get(), lava, water);
-        createGenerator(consumer, Items.SNOW_BLOCK, ModBlocks.SNOW_GEN_T1.get(), ModBlocks.SNOW_GEN_T2.get(),
-                ModBlocks.SNOW_GEN_T3.get(), ModBlocks.SNOW_GEN_T4.get(), ModBlocks.SNOW_GEN_T5.get(), water, water);
-        createGenerator(consumer, Items.SOUL_SAND, ModBlocks.SOULSAND_GEN_T1.get(), ModBlocks.SOULSAND_GEN_T2.get(),
-                ModBlocks.SOULSAND_GEN_T3.get(), ModBlocks.SOULSAND_GEN_T4.get(), ModBlocks.SOULSAND_GEN_T5.get(), lava, lava);
+        createGenerator(consumer, Items.CLAY_BALL, DefaultMaterials.CLAY_GEN_T1.getBlock(), DefaultMaterials.CLAY_GEN_T2.getBlock(),
+                DefaultMaterials.CLAY_GEN_T3.getBlock(), DefaultMaterials.CLAY_GEN_T4.getBlock(), DefaultMaterials.CLAY_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.STONES, DefaultMaterials.CLEAN_GEN_T1.getBlock(), DefaultMaterials.CLEAN_GEN_T2.getBlock(),
+                DefaultMaterials.CLEAN_GEN_T3.getBlock(), DefaultMaterials.CLEAN_GEN_T4.getBlock(), DefaultMaterials.CLEAN_GEN_T5.getBlock(), lava, water);
+        createGenerator(consumer, Tags.Items.COBBLESTONES, DefaultMaterials.COBBLE_GEN_T1.getBlock(), DefaultMaterials.COBBLE_GEN_T2.getBlock(),
+                DefaultMaterials.COBBLE_GEN_T3.getBlock(), DefaultMaterials.COBBLE_GEN_T4.getBlock(), DefaultMaterials.COBBLE_GEN_T5.getBlock(), lava, water);
+        createGenerator(consumer, Items.DIRT, DefaultMaterials.DIRT_GEN_T1.getBlock(), DefaultMaterials.DIRT_GEN_T2.getBlock(),
+                DefaultMaterials.DIRT_GEN_T3.getBlock(), DefaultMaterials.DIRT_GEN_T4.getBlock(), DefaultMaterials.DIRT_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.DYES, DefaultMaterials.DYE_GEN_T1.getBlock(), DefaultMaterials.DYE_GEN_T2.getBlock(),
+                DefaultMaterials.DYE_GEN_T3.getBlock(), DefaultMaterials.DYE_GEN_T4.getBlock(), DefaultMaterials.DYE_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Items.END_STONE, DefaultMaterials.END_GEN_T1.getBlock(), DefaultMaterials.END_GEN_T2.getBlock(),
+                DefaultMaterials.END_GEN_T3.getBlock(), DefaultMaterials.END_GEN_T4.getBlock(), DefaultMaterials.END_GEN_T5.getBlock(), lava, lava);
+        createGenerator(consumer, Items.MYCELIUM, DefaultMaterials.MYCELIUM_GEN_T1.getBlock(), DefaultMaterials.MYCELIUM_GEN_T2.getBlock(),
+                DefaultMaterials.MYCELIUM_GEN_T3.getBlock(), DefaultMaterials.MYCELIUM_GEN_T4.getBlock(), DefaultMaterials.MYCELIUM_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Items.GLOWSTONE, DefaultMaterials.GLOWSTONE_GEN_T1.getBlock(), DefaultMaterials.GLOWSTONE_GEN_T2.getBlock(),
+                DefaultMaterials.GLOWSTONE_GEN_T3.getBlock(), DefaultMaterials.GLOWSTONE_GEN_T4.getBlock(), DefaultMaterials.GLOWSTONE_GEN_T5.getBlock(), lava, lava);
+        createGenerator(consumer, Items.GRASS_BLOCK, DefaultMaterials.GRASS_GEN_T1.getBlock(), DefaultMaterials.GRASS_GEN_T2.getBlock(),
+                DefaultMaterials.GRASS_GEN_T3.getBlock(), DefaultMaterials.GRASS_GEN_T4.getBlock(), DefaultMaterials.GRASS_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.GRAVELS, DefaultMaterials.GRAVEL_GEN_T1.getBlock(), DefaultMaterials.GRAVEL_GEN_T2.getBlock(),
+                DefaultMaterials.GRAVEL_GEN_T3.getBlock(), DefaultMaterials.GRAVEL_GEN_T4.getBlock(), DefaultMaterials.GRAVEL_GEN_T5.getBlock(), lava, water);
+        createGenerator(consumer, Items.ICE, DefaultMaterials.ICE_GEN_T1.getBlock(), DefaultMaterials.ICE_GEN_T2.getBlock(),
+                DefaultMaterials.ICE_GEN_T3.getBlock(), DefaultMaterials.ICE_GEN_T4.getBlock(), DefaultMaterials.ICE_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.NETHERRACKS, DefaultMaterials.NETHERRACK_GEN_T1.getBlock(), DefaultMaterials.NETHERRACK_GEN_T2.getBlock(),
+                DefaultMaterials.NETHERRACK_GEN_T3.getBlock(), DefaultMaterials.NETHERRACK_GEN_T4.getBlock(), DefaultMaterials.NETHERRACK_GEN_T5.getBlock(), lava, lava);
+        createGenerator(consumer, Tags.Items.OBSIDIANS, DefaultMaterials.OBSIDIAN_GEN_T1.getBlock(), DefaultMaterials.OBSIDIAN_GEN_T2.getBlock(),
+                DefaultMaterials.OBSIDIAN_GEN_T3.getBlock(), DefaultMaterials.OBSIDIAN_GEN_T4.getBlock(), DefaultMaterials.OBSIDIAN_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.ORES, DefaultMaterials.ORE_GEN_T1.getBlock(), DefaultMaterials.ORE_GEN_T2.getBlock(),
+                DefaultMaterials.ORE_GEN_T3.getBlock(), DefaultMaterials.ORE_GEN_T4.getBlock(), DefaultMaterials.ORE_GEN_T5.getBlock(), water, lava);
+        createGenerator(consumer, Items.QUARTZ, DefaultMaterials.QUARTZ_GEN_T1.getBlock(), DefaultMaterials.QUARTZ_GEN_T2.getBlock(),
+                DefaultMaterials.QUARTZ_GEN_T3.getBlock(), DefaultMaterials.QUARTZ_GEN_T4.getBlock(), DefaultMaterials.QUARTZ_GEN_T5.getBlock(), lava, lava);
+        createGenerator(consumer, Items.REDSTONE, DefaultMaterials.REDSTONE_GEN_T1.getBlock(), DefaultMaterials.REDSTONE_GEN_T2.getBlock(),
+                DefaultMaterials.REDSTONE_GEN_T3.getBlock(), DefaultMaterials.REDSTONE_GEN_T4.getBlock(), DefaultMaterials.REDSTONE_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Tags.Items.SANDS, DefaultMaterials.SAND_GEN_T1.getBlock(), DefaultMaterials.SAND_GEN_T2.getBlock(),
+                DefaultMaterials.SAND_GEN_T3.getBlock(), DefaultMaterials.SAND_GEN_T4.getBlock(), DefaultMaterials.SAND_GEN_T5.getBlock(), lava, water);
+        createGenerator(consumer, Items.SNOW_BLOCK, DefaultMaterials.SNOW_GEN_T1.getBlock(), DefaultMaterials.SNOW_GEN_T2.getBlock(),
+                DefaultMaterials.SNOW_GEN_T3.getBlock(), DefaultMaterials.SNOW_GEN_T4.getBlock(), DefaultMaterials.SNOW_GEN_T5.getBlock(), water, water);
+        createGenerator(consumer, Items.SOUL_SAND, DefaultMaterials.SOUL_SAND_GEN_T1.getBlock(), DefaultMaterials.SOUL_SAND_GEN_T2.getBlock(),
+                DefaultMaterials.SOUL_SAND_GEN_T3.getBlock(), DefaultMaterials.SOUL_SAND_GEN_T4.getBlock(), DefaultMaterials.SOUL_SAND_GEN_T5.getBlock(), lava, lava);
     }
 
     private void createGenerator(RecipeOutput consumer, ItemLike inputItem, ItemLike tier1, ItemLike tier2, ItemLike tier3, ItemLike tier4, ItemLike tier5, ItemLike bucketLeft, ItemLike bucketRight) {
         createTieredGenerator(consumer, ItemTags.LOGS, inputItem, tier1, bucketRight, bucketLeft); //Tier1
-        createTieredGenerator(consumer, Tags.Items.STONE, tier1, tier2, bucketRight, bucketLeft); //Tier2
+        createTieredGenerator(consumer, Tags.Items.STONES, tier1, tier2, bucketRight, bucketLeft); //Tier2
         createTieredGenerator(consumer, Tags.Items.STORAGE_BLOCKS_IRON, tier2, tier3, bucketRight, bucketLeft); //Tier3
         createTieredGenerator(consumer, Tags.Items.STORAGE_BLOCKS_DIAMOND, tier3, tier4, bucketRight, bucketLeft); //Tier4
         createSmithingGenerator(consumer, tier4, tier5);
@@ -83,7 +83,7 @@ public class RfDRecipesGen extends RecipeProvider {
 
     private void createGenerator(RecipeOutput consumer, TagKey<Item> inputItem, ItemLike tier1, ItemLike tier2, ItemLike tier3, ItemLike tier4, ItemLike tier5, ItemLike bucketLeft, ItemLike bucketRight) {
         createTieredGenerator(consumer, inputItem, tier1, bucketRight, bucketLeft); //Tier1
-        createTieredGenerator(consumer, Tags.Items.STONE, tier1, tier2, bucketRight, bucketLeft); //Tier2
+        createTieredGenerator(consumer, Tags.Items.STONES, tier1, tier2, bucketRight, bucketLeft); //Tier2
         createTieredGenerator(consumer, Tags.Items.STORAGE_BLOCKS_IRON, tier2, tier3, bucketRight, bucketLeft); //Tier3
         createTieredGenerator(consumer, Tags.Items.STORAGE_BLOCKS_DIAMOND, tier3, tier4, bucketRight, bucketLeft); //Tier4
         createSmithingGenerator(consumer, tier4, tier5);
@@ -100,7 +100,7 @@ public class RfDRecipesGen extends RecipeProvider {
                 .define('l', bucketLeft)
                 .define('w', tieredItem)
                 .define('x', input)
-                .unlockedBy("has_" + input.asItem().getName(input.asItem().getDefaultInstance()).getString(), InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .unlockedBy("has_" + input.toString().split(":")[1], InventoryChangeTrigger.TriggerInstance.hasItems(input))
                 .save(consumer, modLoc(BuiltInRegistries.ITEM.getKey(output.asItem()).getPath()));
     }
 
@@ -126,6 +126,6 @@ public class RfDRecipesGen extends RecipeProvider {
     }
 
     private ResourceLocation modLoc(String input) {
-        return new ResourceLocation(ResourcesForDays.MODID, input);
+        return ResourceLocation.fromNamespaceAndPath(ResourcesForDays.MODID, input);
     }
 }

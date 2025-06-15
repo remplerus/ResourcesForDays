@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_obsidian_t3}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rfd:obsidian_t3"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rfd:obsidian_t4"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_obsidian_t3}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rfd:obsidian_t4"
+    ]
+  }
+}

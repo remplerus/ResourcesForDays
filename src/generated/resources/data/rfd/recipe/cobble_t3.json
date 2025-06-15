@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:water_bucket"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:lava_bucket"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "w": {
+      "tag": "c:storage_blocks/iron"
+    },
+    "x": {
+      "item": "rfd:cobble_t2"
+    }
+  },
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rfd:cobble_t3"
+  }
+}

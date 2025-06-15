@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ore_t3}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "rfd:ore_t3"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rfd:ore_t4"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ore_t3}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rfd:ore_t4"
+    ]
+  }
+}

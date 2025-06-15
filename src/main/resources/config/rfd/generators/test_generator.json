@@ -1,0 +1,8 @@
+{
+	"strength": 2.0,
+	"needs_correct_tool": false,
+	"required_mod_id": "minecraft",
+	"light_level": 15,
+	"item": "minecraft:diamond",
+	"block": "minecraft:diamond_block"
+}

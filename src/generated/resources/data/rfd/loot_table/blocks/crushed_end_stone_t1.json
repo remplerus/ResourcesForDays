@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rfd:crushed_end_stone_t1"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rfd:blocks/crushed_end_stone_t1"
+}

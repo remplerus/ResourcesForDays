@@ -1,0 +1,26 @@
+{
+  "values": [
+    "rfd:cobble_t1",
+    "rfd:clay_t1",
+    "rfd:clean_t1",
+    "rfd:dirt_t1",
+    "rfd:end_stone_t1",
+    "rfd:mycelium_t1",
+    "rfd:glowstone_t1",
+    "rfd:grass_t1",
+    "rfd:gravel_t1",
+    "rfd:ice_t1",
+    "rfd:netherrack_t1",
+    "rfd:obsidian_t1",
+    "rfd:quartz_t1",
+    "rfd:redstone_t1",
+    "rfd:sand_t1",
+    "rfd:snow_t1",
+    "rfd:soul_sand_t1",
+    "rfd:ore_t1",
+    "rfd:dye_t1",
+    "rfd:dust_t1",
+    "rfd:crushed_netherrack_t1",
+    "rfd:crushed_end_stone_t1"
+  ]
+}

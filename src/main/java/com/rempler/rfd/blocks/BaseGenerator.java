@@ -2,7 +2,7 @@ package com.rempler.rfd.blocks;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.serialization.MapCodec;
-import com.rempler.rfd.blockentities.TieredGeneratorTile;
+import com.rempler.rfd.blockentities.TieredGeneratorEntity;
 import com.rempler.rfd.setup.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -19,8 +19,6 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.core.BlockPos;
@@ -43,23 +41,20 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
     private final Item item;
     private final Block block;
 
-    protected BaseGenerator(int lightLevel) {
-        this(lightLevel, 1, Items.AIR, Blocks.AIR);
-    }
-
-    public BaseGenerator(int lightLevel, int Tier, Item item, Block block) {
-        super(Properties.of()
-                .sound(SoundType.STONE)
-                .strength(2.0f)
-                .lightLevel((light) -> lightLevel)
-                .pushReaction(PushReaction.BLOCK)
-        );
-        this.tier = Tier;
+    public BaseGenerator(Properties properties, int tier, Item item, Block block) {
+        super(properties);
+        this.tier = tier;
         this.item = item;
         this.block = block;
     }
 
-    @SuppressWarnings("deprecation")
+    public BaseGenerator(Properties properties, int tier) {
+        super(properties);
+        this.tier = tier;
+        this.item = Items.AIR;
+        this.block = Blocks.AIR;
+    }
+
     @Override
     public VoxelShape getOcclusionShape(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return RENDER_SHAPE;
@@ -76,7 +71,7 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flags) {
+    public void appendHoverText(ItemStack stack, @Nullable Item.TooltipContext worldIn, List<Component> tooltip, TooltipFlag flags) {
         if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
             Component information = Component.translatable("block.generator.information");
 
@@ -102,7 +97,7 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return TieredGeneratorTile.create(this.tier, pos, state);
+        return TieredGeneratorEntity.create(this.tier, pos, state);
     }
 
     @Nullable
@@ -110,8 +105,8 @@ public class BaseGenerator extends HorizontalDirectionalBlock implements EntityB
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         if (!level.isClientSide) {
             return (level1, blockPos, blockState, t) -> {
-                if (t instanceof TieredGeneratorTile tile) {
-                    tile.tickServer(item, block);
+                if (t instanceof TieredGeneratorEntity generatorEntity) {
+                    generatorEntity.tickServer(item, block);
                 }
             };
         }

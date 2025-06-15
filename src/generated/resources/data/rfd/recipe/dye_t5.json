@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "base": {
+    "item": "rfd:dye_t4"
+  },
+  "result": {
+    "count": 1,
+    "id": "rfd:dye_t5"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

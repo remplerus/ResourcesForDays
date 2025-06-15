@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:lava_bucket"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "l": {
+      "item": "minecraft:lava_bucket"
+    },
+    "s": {
+      "item": "minecraft:stone_bricks"
+    },
+    "w": {
+      "tag": "c:storage_blocks/iron"
+    },
+    "x": {
+      "item": "rfd:soul_sand_t2"
+    }
+  },
+  "pattern": [
+    "sws",
+    "bgl",
+    "sxs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rfd:soul_sand_t3"
+  }
+}

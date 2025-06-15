@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "base": {
+    "item": "rfd:dirt_t4"
+  },
+  "result": {
+    "count": 1,
+    "id": "rfd:dirt_t5"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}
