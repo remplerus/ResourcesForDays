@@ -11,13 +11,14 @@ public class GeneratorMaterial extends AbstractMaterial {
     private final int lightLevel;
     private final ItemLike item;
     private final Block block;
-    private static SoundType soundType;
-    protected GeneratorMaterial(float strength, boolean needsCorrectTool, String requiredModId, int tier, int lightLevel, ItemLike item, Block block) {
-        super(GeneratorMaterial.soundType, strength, needsCorrectTool, requiredModId);
+    private final SoundType soundType;
+    protected GeneratorMaterial(float strength, boolean needsCorrectTool, String requiredModId, int tier, int lightLevel, ItemLike item, Block block, SoundType soundType) {
+        super(soundType, strength, needsCorrectTool, requiredModId);
         this.tier = tier;
         this.lightLevel = lightLevel;
         this.item = item;
         this.block = block;
+        this.soundType = soundType;
     }
 
     @Override
@@ -25,8 +26,8 @@ public class GeneratorMaterial extends AbstractMaterial {
         return new BaseGenerator(this.props().lightLevel((state) -> this.lightLevel), this.tier, this.item.asItem(), this.block);
     }
 
-    public static void setSoundType(SoundType soundType) {
-        GeneratorMaterial.soundType = soundType;
+    public SoundType getSoundType() {
+        return this.soundType;
     }
 
     @Nullable
@@ -37,12 +38,11 @@ public class GeneratorMaterial extends AbstractMaterial {
         int lightLevel = parser.getLightLevel();
         ItemLike item = parser.getItem();
         Block block = parser.getBlock();
-        setSoundType(soundType);
 
         if (parser.error) {
             return null;
         } else {
-            return new GeneratorMaterial(strength, needsCorrectTool, requiredModId, tier, lightLevel, item, block);
+            return new GeneratorMaterial(strength, needsCorrectTool, requiredModId, tier, lightLevel, item, block, soundType);
         }
     }
 }

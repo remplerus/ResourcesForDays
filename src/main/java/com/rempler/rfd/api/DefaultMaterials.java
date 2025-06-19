@@ -148,23 +148,23 @@ public class DefaultMaterials {
 
 
     private static GeneratorMaterial addDefaultT1Generator(String name, String requiredModId, int lightLevel, ItemLike item, Block block) {
-        return addDefaultGenerator(name, 1.5f, false, requiredModId, 1, lightLevel, item, block);
+        return addDefaultGenerator(name, 1.5f, false, requiredModId, 1, lightLevel, item, block, SoundType.WOOD);
     }
     private static GeneratorMaterial addDefaultT2Generator(String name, String requiredModId, int lightLevel, ItemLike item, Block block) {
-        return addDefaultGenerator(name, 2.0f, true, requiredModId, 2, lightLevel, item, block);
+        return addDefaultGenerator(name, 2.0f, true, requiredModId, 2, lightLevel, item, block, SoundType.STONE);
     }
     private static GeneratorMaterial addDefaultT3Generator(String name, String requiredModId, int lightLevel, ItemLike item, Block block) {
-        return addDefaultGenerator(name, 3.0f, true, requiredModId, 3, lightLevel, item, block);
+        return addDefaultGenerator(name, 3.0f, true, requiredModId, 3, lightLevel, item, block, SoundType.METAL);
     }
     private static GeneratorMaterial addDefaultT4Generator(String name, String requiredModId, int lightLevel, ItemLike item, Block block) {
-        return addDefaultGenerator(name, 3.0f, true, requiredModId, 4, lightLevel, item, block);
+        return addDefaultGenerator(name, 3.0f, true, requiredModId, 4, lightLevel, item, block, SoundType.METAL);
     }
     private static GeneratorMaterial addDefaultT5Generator(String name, String requiredModId, int lightLevel, ItemLike item, Block block) {
-        return addDefaultGenerator(name, 3.0f, true, requiredModId, 5, lightLevel, item, block);
+        return addDefaultGenerator(name, 3.0f, true, requiredModId, 5, lightLevel, item, block, SoundType.METAL);
     }
 
-    private static GeneratorMaterial addDefaultGenerator(String name, float strength, boolean needsCorrectTool, String requiredModId, int tier, int lightLevel, ItemLike item, Block block) {
-        var material = new GeneratorMaterial(strength, needsCorrectTool, requiredModId, tier, lightLevel, item, block);
+    private static GeneratorMaterial addDefaultGenerator(String name, float strength, boolean needsCorrectTool, String requiredModId, int tier, int lightLevel, ItemLike item, Block block, SoundType soundType) {
+        var material = new GeneratorMaterial(strength, needsCorrectTool, requiredModId, tier, lightLevel, item, block, soundType);
         switch (tier) {
             case 1 -> T1_GENERATORS.register(name, material);
             case 2 -> T2_GENERATORS.register(name, material);
