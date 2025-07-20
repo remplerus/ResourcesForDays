@@ -144,6 +144,14 @@ publishing {
         maven {
             url "file://${project.projectDir}/repo"
         }
+        maven {
+            name = "RemplersRepo"
+            url = "https://maven.rempler.com:42069/releases/"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
     }
 }
 
